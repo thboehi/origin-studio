@@ -76,6 +76,13 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --color-bg: #090914;
+  --color-bg-secondary: #16161D;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #B0B3C7;
+  --color-accent-blue: #5B7CFA;
+  --color-accent-violet: #A259FF;
+  --color-title: #2B2D42;
 }
 
 .dark {
@@ -117,6 +124,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-foreground;
   }
 }

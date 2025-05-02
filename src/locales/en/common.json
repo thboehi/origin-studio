@@ -1,3 +1,9 @@
 {
-    "title": "Hello World"
+    "title": "Hello World",
+    "home": "Home",
+    "prestations": "Prestations",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "contact-us": "Contact us"
 }

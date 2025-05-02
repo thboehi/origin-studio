@@ -2,18 +2,44 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
-  const { pathname, locale } = request.nextUrl;
+// Liste des locales supportées
+const locales = ['fr', 'en'];
 
-  // Si l'utilisateur accède à la racine, on le redirige vers la version française
+// Fonction pour obtenir la locale préférée
+function getLocale(request: NextRequest) {
+  const acceptLanguage = request.headers.get('accept-language');
+  if (acceptLanguage) {
+    const preferredLocale = acceptLanguage.split(',')[0].split('-')[0];
+    if (locales.includes(preferredLocale)) {
+      return preferredLocale;
+    }
+  }
+  return 'fr'; // Locale par défaut
+}
+
+export function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+  
+  // Si on est à la racine, on redirige vers le français
   if (pathname === '/') {
-    const defaultLocale = 'fr';
-    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url));
+    return NextResponse.redirect(new URL('/fr', request.url));
   }
 
-  return NextResponse.next();
+  // Vérifie si le chemin commence déjà par une locale
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
+
+  if (pathnameHasLocale) return;
+
+  // Redirige vers la locale préférée
+  const locale = getLocale(request);
+  request.nextUrl.pathname = `/${locale}${pathname}`;
+  return NextResponse.redirect(request.nextUrl);
 }
 
 export const config = {
-  matcher: ['/((?!_next|favicon.ico|images|fonts|.*\..*).*)'],
+  matcher: [
+    '/((?!_next|api|favicon.ico|img|fonts).*)',
+  ],
 };

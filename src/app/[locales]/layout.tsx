@@ -1,8 +1,8 @@
 // Layout principal de l'application avec support multilingue
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
+import "../globals.css";
+import { Navbar } from "@/components/Navbar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,18 +20,21 @@ export const metadata: Metadata = {
 
 // Layout principal qui gère le support multilingue
 // Accepte les paramètres de locale (fr/en) 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: 'fr' | 'en' };
+
+  params: { locales: 'fr' | 'en' };
 }>) {
+  const { locales } = await Promise.resolve(params);
   return (
-    <html lang={params.locale}>
+    <html lang={locales}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full max-w-[100vw] overflow-x-hidden`}
       >
+        <Navbar params={{ locales }} />
         {children}
       </body>
     </html>

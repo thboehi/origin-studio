@@ -1,13 +1,12 @@
-import 'server-only';
+import fr from '@/locales/fr/common.json';
+import en from '@/locales/en/common.json';
 
 const dictionaries = {
-  // Importation du dictionnaire français
-  fr: () => import('@/locales/fr/common.json').then((module) => module.default),
-  // Importation du dictionnaire anglais
-  en: () => import('@/locales/en/common.json').then((module) => module.default),
+  fr,
+  en,
 };
 
 // Fonction qui retourne le dictionnaire correspondant à la locale demandée
 export const getDictionary = async (locale: 'fr' | 'en') => {
-  return dictionaries[locale]();
+  return dictionaries[locale];
 };

@@ -1,3 +1,9 @@
 {
-    "title": "Bonjour le monde"
+    "title": "Bonjour le monde",
+    "home": "Accueil",
+    "prestations": "Prestations",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact",
+    "contact-us": "Contactez-nous"
 }
