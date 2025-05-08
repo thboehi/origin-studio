@@ -1,9 +1,39 @@
 {
-    "title": "Bonjour le monde",
-    "home": "Accueil",
-    "prestations": "Prestations",
-    "about": "À propos",
-    "projects": "Projets",
-    "contact": "Contact",
-    "contact-us": "Contactez-nous"
+    "nav": {
+        "home": "Accueil",
+        "prestations": "Prestations",
+        "about": "À propos",
+        "projects": "Projets",
+        "contact": "Contact",
+        "contactUs": "Contactez-nous"
+    },
+    "hero": {
+        "title": "Développement web et applicatifs sur mesure",
+        "description": "Nous concevons des applications web sur mesure et des modèles de langage privés pour les entreprises exigeantes qui recherchent des solutions innovantes.",
+        "servicesButton": "Explorez nos services",
+        "projectsButton": "Découvrez nos projets"
+    },
+    "features": {
+        "featuresTitle": "Nos Services",
+        "description": "Des solutions technologiques conçues pour répondre aux besoins de votre entreprise.",
+        "customWebApplications": "Applications Web sur mesure",
+        "privateLLMs": "Modèles de langage privés",
+        "secureSolutions": "Solutions sécurisées",
+        "customWebApplicationsDesc": "Applications web sur mesure développées pour répondre à vos besoins commerciaux.",
+        "privateLLMsDesc": "Modèles de langage privés développés pour répondre à vos besoins commerciaux.",
+        "secureSolutionsDesc": "Solutions sécurisées développées pour répondre à vos besoins commerciaux.",
+        "learnMore": "En savoir plus"
+    },
+    "process": {
+        "title": "Notre Processus",
+        "description": "Une méthodologie rigoureuse pour garantir la qualité et la satisfaction de nos clients.",
+        "initialConsultation": "Consultation initiale",
+        "architecturalDesign": "Conception architecturale",
+        "developmentAgile": "Développement agile",
+        "deploymentMaintenance": "Déploiement et maintenance",
+        "initialConsultationDesc": "Analyse approfondie de vos besoins et objectifs pour concevoir une solution parfaitement adaptée.",
+        "architecturalDesignDesc": "Définition de l'architecture technique et des spécifications fonctionnelles détaillées.",
+        "developmentAgileDesc": "Implémentation itérative et collaborative pour garantir l'adéquation avec vos attentes.",
+        "deploymentMaintenanceDesc": "Mise en production sécurisée et suivi continu pour garantir une performance optimale."
+    }
 }

@@ -30,7 +30,7 @@ export default async function LocaleLayout({
 }>) {
   const { locales } = await Promise.resolve(params);
   return (
-    <html lang={locales}>
+    <html lang={locales} suppressHydrationWarning={true}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-full max-w-[100vw] overflow-x-hidden`}
       >

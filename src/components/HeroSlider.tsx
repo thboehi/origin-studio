@@ -1,17 +1,28 @@
 "use client";
+
 import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
 import { Button } from "./ui/button";
+import MouseScrollIndicator from "./MouseScrollIndicator";
+import { Dictionary } from "@/types/dictionary";
 
-export function HeroSlider() {
+type HeroTranslations = {
+  title: string;
+  description: string;
+  servicesButton: string;
+  projectsButton: string;
+};
+
+export function HeroSlider({ dictionary }: { dictionary: Dictionary }) {
+  const hero = dictionary.hero as HeroTranslations;
   const images = [
-    "/img/BigData.jpeg",
-    "/img/LLM.png",
-    "/img/Security.png",
+    "/img/BigData.webp",
+    "/img/LLM.webp",
+    "/img/Security.webp",
   ];
   return (
-    <ImagesSlider className="h-[40rem]" images={images}>
+    <ImagesSlider className="min-h-screen" images={images}>
       <motion.div
         initial={{
           opacity: 0,
@@ -24,19 +35,20 @@ export function HeroSlider() {
         transition={{
           duration: 0.6,
         }}
-        className="z-50 flex flex-col justify-center items-center"
+        className="z-50 flex flex-col justify-center items-center gap-10"
       >
-        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-          <span className="text-blue-500">Développement</span> web et applicatifs <br /> sur mesure
+        <motion.p className="font-bold text-3xl max-w-4xl px-4 md:text-5xl lg:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 py-4">
+          {hero.title}
         </motion.p>
-        <motion.p className="text-center max-w-2xl text-white/80">
-          Nous concevons des applications web sur mesure et des modèles de langage privés pour les entreprises exigeantes qui recherchent des solutions innovantes.
+        <motion.p className="text-center max-w-2xl text-xl font-medium text-neutral-200 text-shadow-lg">
+          {hero.description}
         </motion.p>
         <div className="flex gap-4">
-          <Button variant="secondary" className="mt-4">Explorez nos services</Button>
-          <Button variant="outline" className="mt-4">Découvrez nos projets</Button>
+          <Button variant="secondary" size="lg" className="mt-4">{hero.servicesButton}</Button>
+          <Button variant="outline" size="lg" className="mt-4">{hero.projectsButton}</Button>
         </div>
       </motion.div>
+      <MouseScrollIndicator />
     </ImagesSlider>
   );
 }

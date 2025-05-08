@@ -1,9 +1,39 @@
 {
-    "title": "Hello World",
-    "home": "Home",
-    "prestations": "Prestations",
-    "about": "About",
-    "projects": "Projects",
-    "contact": "Contact",
-    "contact-us": "Contact us"
+    "nav": {
+        "home": "Home",
+        "prestations": "Prestations",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact",
+        "contactUs": "Contact us"
+    },
+    "hero": {
+        "title": "Custom Web and Application Development",
+        "description": "We design custom web applications and private language models for demanding businesses seeking innovative solutions.",
+        "servicesButton": "Explore our services",
+        "projectsButton": "Discover our projects"
+    },
+    "features": {
+        "featuresTitle": "Our Services",
+        "description": "Technology solutions designed to meet your business needs.",
+        "customWebApplications": "Custom Web Applications",
+        "privateLLMs": "Private LLMs",
+        "secureSolutions": "Secure Solutions",
+        "customWebApplicationsDesc": "Custom web applications developed to meet your business needs.",
+        "privateLLMsDesc": "Private language models developed to meet your business needs.",
+        "secureSolutionsDesc": "Secure solutions developed to meet your business needs.",
+        "learnMore": "Learn more"
+    },
+    "process": {
+        "title": "Our Process",
+        "description": "A rigorous methodology to ensure the quality and satisfaction of our clients.",
+        "initialConsultation": "Initial Consultation",
+        "architecturalDesign": "Architectural Design",
+        "developmentAgile": "Development Agile",
+        "deploymentMaintenance": "Deployment Maintenance",
+        "initialConsultationDesc": "Deep analysis of your needs and objectives to design a perfectly tailored solution.",
+        "architecturalDesignDesc": "Definition of the technical architecture and detailed functional specifications.",
+        "developmentAgileDesc": "Iterative and collaborative implementation to ensure alignment with your expectations.",
+        "deploymentMaintenanceDesc": "Secure deployment and continuous monitoring to ensure optimal performance."
+    }
 }

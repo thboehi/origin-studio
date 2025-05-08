@@ -2,8 +2,18 @@
 
 import React, { useState } from "react";
 import { CustomLink } from "./CustomLink";
+import { Dictionary } from "@/types/dictionary";
 
-export function MobileNavbar({ dictionary }: { dictionary: any }) {
+type NavTranslations = {
+  home: string;
+  prestations: string;
+  about: string;
+  projects: string;
+  contact: string;
+};
+
+export function MobileNavbar({ dictionary }: { dictionary: Dictionary }) {
+  const nav = dictionary.nav as NavTranslations;
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 
   return (
@@ -44,11 +54,11 @@ export function MobileNavbar({ dictionary }: { dictionary: any }) {
         }`}
       >
         <nav className="flex flex-col items-center gap-8 text-lg">
-          <CustomLink href="/" label={dictionary.home} />
-          <CustomLink href='/prestations' label={dictionary.prestations} />
-          <CustomLink href="/about" label={dictionary.about} />
-          <CustomLink href="/projects" label={dictionary.projects} />
-          <CustomLink href="/contact" label="Contact" />
+          <CustomLink href="/" label={nav.home} />
+          <CustomLink href='/prestations' label={nav.prestations} />
+          <CustomLink href="/about" label={nav.about} />
+          <CustomLink href="/projects" label={nav.projects} />
+          <CustomLink href="/contact" label={nav.contact} />
         </nav>
       </div>
     </div>
