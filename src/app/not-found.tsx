@@ -1,59 +1,55 @@
 'use client';
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function NotFound() {
   const router = useRouter();
+  const [locale, setLocale] = useState<'fr' | 'en' | 'de'>('fr');
 
   useEffect(() => {
-    // Rediriger automatiquement vers la version française après 3 secondes
-    const timer = setTimeout(() => {
-      router.push('/fr');
-    }, 3000);
-
-    return () => clearTimeout(timer);
+    // Essayer de détecter la locale depuis plusieurs sources
+    let detectedLocale: 'fr' | 'en' | 'de' = 'fr';
+    
+    // 1. Depuis l'URL actuelle (document.referrer)
+    if (document.referrer) {
+      const refererMatch = document.referrer.match(/\/(fr|en|de)(?=\/|$)/);
+      if (refererMatch && refererMatch[1]) {
+        detectedLocale = refererMatch[1] as 'fr' | 'en' | 'de';
+      }
+    }
+    
+    // 2. Depuis le pathname actuel (au cas où)
+    if (!detectedLocale || detectedLocale === 'fr') {
+      const pathMatch = window.location.pathname.match(/^\/(fr|en|de)(?=\/|$)/);
+      if (pathMatch && pathMatch[1]) {
+        detectedLocale = pathMatch[1] as 'fr' | 'en' | 'de';
+      }
+    }
+    
+    // 3. Depuis le localStorage (si l'utilisateur a déjà visité le site)
+    if (!detectedLocale || detectedLocale === 'fr') {
+      const savedLocale = localStorage.getItem('preferredLocale') as 'fr' | 'en' | 'de' | null;
+      if (savedLocale && ['fr', 'en', 'de'].includes(savedLocale)) {
+        detectedLocale = savedLocale;
+      }
+    }
+    
+    // 4. Depuis la langue du navigateur
+    if (!detectedLocale || detectedLocale === 'fr') {
+      const browserLang = navigator.language.toLowerCase();
+      if (browserLang.startsWith('en')) {
+        detectedLocale = 'en';
+      } else if (browserLang.startsWith('de')) {
+        detectedLocale = 'de';
+      }
+    }
+    
+    setLocale(detectedLocale);
+    
+    // Redirection immédiate
+    router.push(`/${detectedLocale}`);
   }, [router]);
 
-  return (
-    <main className="flex flex-col min-h-screen bg-black text-white">
-      <div className="flex-1 flex flex-col items-center justify-center px-4 text-center">
-        <div className="max-w-2xl">
-          <h1 className="text-6xl md:text-8xl font-bold text-[var(--color-accent-violet)] mb-6">
-            404
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Page Not Found / Page Introuvable
-          </h2>
-          <p className="text-lg text-neutral-400 mb-4 leading-relaxed">
-            Sorry, we couldn&apos;t find the page you&apos;re looking for. / Désolé, nous n&apos;avons pas pu trouver la page que vous recherchez.
-          </p>
-          <p className="text-sm text-neutral-500 mb-8">
-            Redirecting to French version in 3 seconds... / Redirection vers la version française dans 3 secondes...
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/fr">
-              <Button
-                size="lg"
-                className="bg-[var(--color-accent-violet)] hover:bg-[var(--color-accent-violet)]/80 text-white font-semibold px-8 py-4 text-lg"
-              >
-                Accueil (FR)
-              </Button>
-            </Link>
-            <Link href="/en">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-neutral-600 text-neutral-300 hover:bg-neutral-800 font-semibold px-8 py-4 text-lg"
-              >
-                Home (EN)
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+  return null; // Redirection silencieuse
 }

@@ -9,8 +9,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export const Navbar = ({ params }: { params: { locales: "fr" | "en" | "de" } }) => {
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true); // Visible au départ
   const [isAnimating, setIsAnimating] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [dictionary, setDictionary] = useState<any>(null);
   const [isToggleOpen, setIsToggleOpen] = useState(false);
@@ -34,23 +35,43 @@ export const Navbar = ({ params }: { params: { locales: "fr" | "en" | "de" } }) 
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThreshold = 200; // Apparaît après 200px de scroll
-      const shouldShow = window.scrollY > scrollThreshold;
+      const currentScrollY = window.scrollY;
       
-      if (shouldShow && !showNavbar) {
+      // Si on a scrollé plus de 100px vers le bas depuis le haut
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        // On descend, cacher la navbar
+        if (showNavbar) {
+          setShowNavbar(false);
+        }
+      } else if (currentScrollY < lastScrollY) {
+        // On remonte, afficher la navbar
+        if (!showNavbar) {
+          setShowNavbar(true);
+          setIsAnimating(true);
+          setTimeout(() => setIsAnimating(false), 700);
+        }
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      // Si la souris est dans les 100px du haut
+      if (e.clientY < 100 && !showNavbar) {
         setShowNavbar(true);
         setIsAnimating(true);
-        // Fin de l'animation après 700ms (durée de l'animation)
         setTimeout(() => setIsAnimating(false), 700);
-      } else if (!shouldShow && showNavbar) {
-        setShowNavbar(false);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [showNavbar]);
+    window.addEventListener("mousemove", handleMouseMove);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [showNavbar, lastScrollY]);
 
   useEffect(() => {
     const loadDictionary = async () => {
@@ -193,7 +214,7 @@ export const Navbar = ({ params }: { params: { locales: "fr" | "en" | "de" } }) 
                   href={localizedHref}
                   data-href={item.href}
                   className={`relative z-10 text-sm transition-colors duration-200 ${
-                    isActive ? 'text-white font-medium' : 'text-gray-300 hover:text-white'
+                    isActive ? 'text-white' : 'text-gray-300 hover:text-white'
                   }`}
                   onMouseEnter={(e) => handleMouseEnter(item.href, e)}
                   onMouseLeave={handleMouseLeave}
