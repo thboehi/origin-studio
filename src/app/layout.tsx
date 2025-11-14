@@ -30,6 +30,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="manifest" href="/manifest.json" />
+        <script defer src="https://umami.ext4.ch/script.js" data-website-id="eb8645c7-36a1-4c3f-a9a8-947b512bb57b"></script>
         
         {/* Preconnect pour optimiser les performances */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
