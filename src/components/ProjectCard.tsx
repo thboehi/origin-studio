@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, Pin } from "lucide-react";
 import { ProjectsTranslations } from "@/types/translations";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -32,10 +33,11 @@ export default function ProjectCard({ title, language, description, image, link,
       >
         {/* Image */}
         <div className="relative h-48 overflow-hidden">
-          <img 
+          <Image 
             src={image} 
             alt={title}
-            className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-200"
+            fill
+            className="object-cover scale-110 group-hover:scale-100 transition-transform duration-200"
           />
           <div className="absolute top-3 right-3 flex gap-2">
             <span className="text-xs bg-black/70 backdrop-blur-sm text-white px-2 py-1 rounded-full">
@@ -85,10 +87,11 @@ export default function ProjectCard({ title, language, description, image, link,
             >
               {/* Image en grand */}
               <div className="relative h-64 md:h-80 overflow-hidden">
-                <img 
+                <Image 
                   src={image} 
                   alt={title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
                 <div className="absolute top-4 right-4 flex gap-2">
                   <span className="text-sm bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full">

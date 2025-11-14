@@ -18,7 +18,7 @@ export async function GET() {
     const nonce = `${timestamp}.${signature}`;
     
     return NextResponse.json({ nonce });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to generate nonce" }, { status: 500 });
   }
 }

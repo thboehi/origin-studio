@@ -10,7 +10,7 @@ interface FinalCTAProps {
   locale: string;
 }
 
-export default function FinalCTA({ title, buttonText, locale }: FinalCTAProps) {
+export default function FinalCTA({ title, buttonText }: FinalCTAProps) {
   return (
     <section className="w-full flex items-center justify-center py-24 px-4">
       <motion.div

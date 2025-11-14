@@ -1,5 +1,4 @@
 import { getDictionary } from "@/lib/i18n/get-dictionnary";
-import { AboutTranslations } from "@/types/translations";
 import { Button } from "@/components/ui/button";
 import TeamCard from "@/components/TeamCard";
 import HeroPage from "@/components/HeroPage";

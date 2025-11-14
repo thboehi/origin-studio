@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function NotFound() {
   const router = useRouter();
-  const [locale, setLocale] = useState<'fr' | 'en' | 'de'>('fr');
 
   useEffect(() => {
     // Essayer de détecter la locale depuis plusieurs sources
@@ -44,8 +43,6 @@ export default function NotFound() {
         detectedLocale = 'de';
       }
     }
-    
-    setLocale(detectedLocale);
     
     // Redirection immédiate
     router.push(`/${detectedLocale}`);

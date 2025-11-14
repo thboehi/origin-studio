@@ -1,5 +1,4 @@
 import { getDictionary } from "@/lib/i18n/get-dictionnary";
-import { ContactTranslations } from "@/types/translations";
 import HeroPage from "@/components/HeroPage";
 import SimpleContactCard from "@/components/SimpleContactCard";
 import ContactForm from "@/components/ContactForm";

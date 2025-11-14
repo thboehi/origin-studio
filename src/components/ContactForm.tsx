@@ -112,7 +112,7 @@ export default function ContactForm({ translations }: ContactFormProps) {
         setSubmitStatus("error");
         setSubmitMessage(translations.messages.errorGeneric);
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
       setSubmitMessage(translations.messages.errorGeneric);
     } finally {

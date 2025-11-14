@@ -8,7 +8,6 @@ interface ContactMethodCardProps {
   kind: "email" | "tel";
   parts: string[];
   buttonText: string;
-  index: number;
 }
 
 export default function ContactMethodCard({
@@ -17,7 +16,6 @@ export default function ContactMethodCard({
   kind,
   parts,
   buttonText,
-  index,
 }: ContactMethodCardProps) {
   return (
     <div className="flex flex-col items-center text-center gap-4 p-8 bg-neutral-900/30 border border-neutral-800 rounded-xl hover:border-[var(--color-accent-violet)]/50 transition-colors duration-300">

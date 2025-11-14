@@ -2,7 +2,6 @@ import HeroPage from "@/components/HeroPage";
 import ProjectCard from "@/components/ProjectCard";
 import PinnedProjectsSlider from "@/components/PinnedProjectsSlider";
 import { getDictionary } from "@/lib/i18n/get-dictionnary";
-import { ProjectsTranslations } from "@/types/translations";
 import { ProjectsData } from "@/types/project";
 
 async function getProjects(): Promise<ProjectsData> {

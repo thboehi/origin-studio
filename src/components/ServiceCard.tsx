@@ -3,8 +3,6 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { CheckIcon } from "lucide-react";
-import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
 
 interface ServiceCardProps {
   title: string;

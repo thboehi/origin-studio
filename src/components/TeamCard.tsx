@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Tooltip } from 'react-tooltip';
+import Image from "next/image";
 
 interface TeamCardProps {
   title: string;
@@ -30,8 +31,8 @@ export default function TeamCard({ title, name, description, image, phone, mail,
 
   return (
     <div className="relative">
-      <div className="relative">
-        <img src={image} alt={name} className="aspect-square transition-all duration-300" />
+      <div className="relative aspect-square">
+        <Image src={image} alt={name} fill className="object-cover transition-all duration-300" />
       </div>
       <div className="mt-4">
         <h3 className="text-2xl font-bold text-white">

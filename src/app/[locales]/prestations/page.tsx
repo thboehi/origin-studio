@@ -1,5 +1,4 @@
 import { getDictionary } from "@/lib/i18n/get-dictionnary";
-import { ServicesTranslations } from "@/types/translations";
 import { Button } from "@/components/ui/button";
 import HeroPage from "@/components/HeroPage";
 import ServiceCard from "@/components/ServiceCard";
@@ -14,15 +13,14 @@ import {
   PaletteIcon,
   WrenchIcon,
   LightbulbIcon,
-  ArrowRightIcon,
 } from "lucide-react";
 
 export default async function Services({
   params,
 }: {
-  params: { locales: "fr" | "en" };
+  params: Promise<{ locales: "fr" | "en" }>;
 }) {
-  const { locales } = await Promise.resolve(params);
+  const { locales } = await params;
   const dictionary = await getDictionary(locales);
   const services = dictionary.services!;
 
@@ -114,7 +112,7 @@ export default async function Services({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {services.technologies.categories.map((category, index) => (
+            {services.technologies.categories.map((category) => (
               <div
                 key={category.name}
                 className="bg-neutral-950 border border-neutral-800 rounded-4xl p-6 hover:border-neutral-600 transition-colors"

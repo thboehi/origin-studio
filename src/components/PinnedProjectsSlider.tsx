@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, Pin } from "lucide-react";
 import { Project } from "@/types/project";
 import { ProjectsTranslations } from "@/types/translations";
+import Image from "next/image";
 
 interface PinnedProjectsSliderProps {
   projects: Project[];
@@ -193,10 +194,11 @@ export default function PinnedProjectsSlider({ projects, translations }: PinnedP
             >
               {/* Image en grand */}
               <div className="relative h-64 md:h-80 overflow-hidden">
-                <img 
+                <Image 
                   src={selectedProject.image} 
                   alt={selectedProject.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
                 <div className="absolute top-4 right-4 flex gap-2">
                   <span className="text-sm bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full">
