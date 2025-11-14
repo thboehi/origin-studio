@@ -56,7 +56,7 @@ export default function FeatureCardsContainer({ features }: FeatureCardsContaine
   return (
     <div ref={containerRef} className="relative flex flex-wrap items-center justify-center gap-10">
       <motion.div
-        className="absolute bg-neutral-900 dark:bg-slate-800/[0.8] rounded-2xl pointer-events-none"
+        className="absolute bg-neutral-900 dark:bg-slate-800/[0.8] rounded-[2.4rem] pointer-events-none"
         animate={backgroundStyle}
         transition={{ duration: 0.5, ease: [0.34, 1.36, 0.44, 1] }}
       />

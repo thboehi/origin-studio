@@ -63,7 +63,7 @@ export default async function About({
       </section>
 
       {/* Mission Section */}
-      <section className="w-full flex flex-col items-center justify-start py-[15vh] px-4 bg-black">
+      <section className="w-full flex flex-col items-center justify-start py-[15vh] px-4">
         <div className="max-w-4xl text-center">
           <SectionTitle className="mb-6">
             {about.mission.title}

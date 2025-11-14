@@ -20,7 +20,7 @@ export default function TestimonialCard({ text, author, company, index }: Testim
         ease: "easeOut"
       }}
       viewport={{ once: true, margin: "-50px" }}
-      className="p-8 bg-neutral-900/30 border border-neutral-800 rounded-lg hover:border-neutral-700 transition-colors duration-300"
+      className="p-8 bg-neutral-900/30 border border-neutral-800 rounded-4xl hover:border-neutral-700 transition-colors duration-300"
     >
       <p className="text-neutral-300 italic leading-relaxed mb-4">
         &ldquo;{text}&rdquo;

@@ -27,7 +27,7 @@ export default function ProjectCard({ title, language, description, image, link,
       {/* Card normale */}
       <motion.div
         onClick={toggleExpanded}
-        className="bg-neutral-900/50 border border-neutral-800 rounded-lg overflow-hidden cursor-pointer hover:border-neutral-600 hover:bg-neutral-900/70 hover:scale-105 transition-all duration-200 group"
+        className="bg-neutral-900/50 border border-neutral-800 rounded-4xl overflow-hidden cursor-pointer hover:border-neutral-600 hover:bg-neutral-900/70 hover:scale-105 transition-bounce duration-200 group"
         whileTap={{ scale: 0.98 }}
       >
         {/* Image */}
@@ -80,7 +80,7 @@ export default function ProjectCard({ title, language, description, image, link,
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-neutral-900 border border-neutral-700 rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-neutral-900 border border-neutral-700 rounded-4xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Image en grand */}
@@ -135,7 +135,7 @@ export default function ProjectCard({ title, language, description, image, link,
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[var(--color-accent-violet)] hover:bg-[var(--color-accent-violet)]/80 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors"
+                      className="bg-[var(--color-accent-violet)] hover:bg-[var(--color-accent-violet)]/80 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-colors"
                     >
                       {translations.actions.visitProject}
                       <ExternalLink className="w-4 h-4" />

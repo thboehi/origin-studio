@@ -45,7 +45,7 @@ export default function SimpleContactCard({
     : undefined;
 
   return (
-    <div className="flex flex-col gap-3 p-6 bg-neutral-900/30 border border-neutral-800 rounded-xl hover:border-neutral-700 transition-colors duration-300">
+    <div className="flex flex-col gap-3 p-6 bg-neutral-900/30 border border-neutral-800 rounded-4xl hover:border-neutral-700 transition-colors duration-300">
       <h3 className="text-lg font-bold text-white">{title}</h3>
       <p className="text-neutral-400 text-sm leading-relaxed mb-2">
         {description}

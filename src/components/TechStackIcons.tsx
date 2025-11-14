@@ -87,7 +87,7 @@ export default function TechStackIcons({ title, subtitle }: TechStackIconsProps)
 
         <div ref={containerRef} className="relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
           <motion.div
-            className="absolute bg-neutral-900/50 border border-white/20 rounded-lg pointer-events-none"
+            className="absolute bg-neutral-900/50 border border-white/20 rounded-3xl pointer-events-none"
             animate={backgroundStyle}
             transition={{ duration: 0.5, ease: [0.34, 1.36, 0.44, 1] }}
           />

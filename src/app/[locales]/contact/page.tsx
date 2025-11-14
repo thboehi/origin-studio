@@ -22,7 +22,7 @@ export default async function Contact({
       <HeroPage title={contact.title} subtitle={contact.subtitle} intro="" />
 
       {/* Contact Form + Info Section */}
-      <section className="w-full flex flex-col items-center justify-center py-[15vh] px-4 bg-neutral-950/50">
+      <section className="w-full flex flex-col items-center justify-center py-[15vh] px-4">
         <div className="max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column: Form */}
@@ -80,7 +80,7 @@ export default async function Contact({
       {/* Google Maps Section */}
       <section className="w-full flex flex-col items-center justify-center py-[15vh] px-4">
         <div className="max-w-7xl w-full">
-          <div className="relative w-full h-[500px] rounded-2xl overflow-hidden border border-neutral-800">
+          <div className="relative w-full h-[500px] rounded-4xl overflow-hidden border border-neutral-800">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2760.8842544!2d6.1472!3d46.2044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7b1f8b6b9999%3A0x1234567890abcdef!2sChemin%20du%20Bois-Gentil%205%2C%201203%20Gen%C3%A8ve!5e0!3m2!1sfr!2sch!4v1234567890123!5m2!1sfr!2sch"
               width="100%"

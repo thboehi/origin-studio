@@ -116,7 +116,7 @@ export default async function Services({
             {services.technologies.categories.map((category, index) => (
               <div
                 key={category.name}
-                className="bg-neutral-950 border border-neutral-800 rounded-lg p-6 hover:border-neutral-600 transition-colors"
+                className="bg-neutral-950 border border-neutral-800 rounded-4xl p-6 hover:border-neutral-600 transition-colors"
               >
                 <h3 className="text-xl font-bold text-white mb-4 text-center">
                   {category.name}
@@ -125,7 +125,7 @@ export default async function Services({
                   {category.items.map((item) => (
                     <li
                       key={item}
-                      className="text-neutral-400 text-sm text-center"
+                      className="text-neutral-400 hover:text-white transition-colors text-sm text-center cursor-default"
                     >
                       {item}
                     </li>
@@ -169,6 +169,7 @@ export default async function Services({
               features={services.packages.business.features}
               cta={services.packages.business.cta}
               highlighted={true}
+              bestOffer={services.packages.bestOffer}
               index={1}
             />
             <PricingCard
@@ -201,7 +202,7 @@ export default async function Services({
             {services.useCases.items.map((useCase, index) => (
               <div
                 key={index}
-                className="bg-neutral-950 border border-neutral-800 rounded-lg p-6 hover:border-neutral-600 transition-colors"
+                className="bg-neutral-950 border border-neutral-800 rounded-4xl p-8 hover:border-neutral-600 transition-colors"
               >
                 <h3 className="text-lg font-semibold text-white mb-3">
                   {useCase.question}

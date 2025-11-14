@@ -47,7 +47,7 @@ export default function FeatureCard({
       onMouseLeave={handleMouseLeave}
     >
       {/* Retirer l'AnimatePresence d'ici car c'est géré au niveau parent */}
-        <div className="relative z-20 max-w-md min-h-64 flex flex-col items-start gap-4 bg-neutral-950 rounded-lg border border-neutral-800 p-6 group-hover:border-neutral-600 transition-[border-color,filter] duration-500 ease-out group-hover:drop-shadow-[0_8px_60px_rgba(95,16,220,0.4)]">
+        <div className="relative z-20 max-w-md min-h-64 flex flex-col items-start gap-4 bg-neutral-950 rounded-4xl border border-neutral-800 p-6 group-hover:border-neutral-600 transition-[border-color,filter] duration-500 ease-out group-hover:drop-shadow-[0_8px_60px_rgba(95,16,220,0.4)]">
           <div className="flex items-center rounded bg-[var(--color-accent-violet)] p-2 text-white">
             {icon}
           </div>

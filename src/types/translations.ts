@@ -273,6 +273,7 @@ export type ServicesTranslations = {
   packages: {
     title: string;
     description: string;
+    bestOffer: string;
     starter: {
       name: string;
       mountainInfo: string;

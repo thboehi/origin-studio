@@ -11,6 +11,7 @@ interface PricingCardProps {
   features: string[];
   cta: string;
   highlighted?: boolean;
+  bestOffer?: string;
   index: number;
 }
 
@@ -23,6 +24,7 @@ export default function PricingCard({
   features,
   cta,
   highlighted = false,
+  bestOffer,
   index,
 }: PricingCardProps) {
   return (
@@ -31,15 +33,15 @@ export default function PricingCard({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className={`relative bg-neutral-950 rounded-lg p-8 transition-all duration-500 ${
+      className={`relative bg-neutral-950 rounded-4xl p-8 transition-all duration-500 ${
         highlighted
           ? "border-2 border-[var(--color-accent-violet)] shadow-[0_0_30px_rgba(95,16,220,0.3)] scale-105"
           : "border border-neutral-800 hover:border-neutral-600"
       }`}
     >
-      {highlighted && (
+      {highlighted && bestOffer && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[var(--color-accent-violet)] text-white px-4 py-1 rounded-full text-sm font-semibold">
-          Populaire
+          {bestOffer}
         </div>
       )}
 
@@ -81,7 +83,7 @@ export default function PricingCard({
       </ul>
 
       <button
-        className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
+        className={`w-full py-3 rounded-4xl font-semibold transition-all duration-300 cursor-pointer ${
           highlighted
             ? "bg-[var(--color-accent-violet)] text-white hover:opacity-90 transition-opacity"
             : "bg-neutral-800 text-white hover:bg-neutral-700"

@@ -13,7 +13,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            "flex h-12 w-full rounded-lg border border-neutral-800 bg-neutral-950/50 px-4 py-3 text-base text-white placeholder:text-neutral-500 transition-colors",
+            "flex h-12 w-full rounded-full border border-neutral-800 bg-neutral-950/50 px-4 py-3 text-base text-white placeholder:text-neutral-500 transition-colors",
             "focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-violet)]/50 focus:border-[var(--color-accent-violet)]",
             "disabled:cursor-not-allowed disabled:opacity-50",
             error && "border-red-500 focus:ring-red-500/50 focus:border-red-500",

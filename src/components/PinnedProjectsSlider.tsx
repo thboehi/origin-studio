@@ -64,7 +64,7 @@ export default function PinnedProjectsSlider({ projects, translations }: PinnedP
           {/* Slider */}
           <div className="relative">
             <motion.div 
-              className="bg-neutral-900/50 border border-neutral-700 rounded-2xl overflow-hidden backdrop-blur-sm"
+              className="bg-neutral-900/50 border border-neutral-700 rounded-4xl overflow-hidden backdrop-blur-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -117,7 +117,7 @@ export default function PinnedProjectsSlider({ projects, translations }: PinnedP
                     <div className="flex flex-col sm:flex-row gap-4">
                       <button
                         onClick={() => openModal(currentProject)}
-                        className="bg-[var(--color-accent-violet)] hover:bg-[var(--color-accent-violet)]/80 text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer"
+                        className="bg-[var(--color-accent-violet)] hover:bg-[var(--color-accent-violet)]/80 text-white px-6 py-3 rounded-full font-medium transition-colors cursor-pointer"
                       >
                         {translations.actions.seeMore}
                       </button>
@@ -126,7 +126,7 @@ export default function PinnedProjectsSlider({ projects, translations }: PinnedP
                           href={currentProject.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="border border-neutral-600 hover:border-neutral-500 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 justify-center cursor-pointer"
+                          className="border border-neutral-600 hover:border-neutral-500 text-white px-6 py-3 rounded-full font-medium transition-colors flex items-center gap-2 justify-center cursor-pointer"
                         >
                           {translations.actions.visitProject}
                           <ExternalLink className="w-4 h-4" />
@@ -188,7 +188,7 @@ export default function PinnedProjectsSlider({ projects, translations }: PinnedP
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-neutral-900 border border-neutral-700 rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-neutral-900 border border-neutral-700 rounded-4xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Image en grand */}
@@ -238,7 +238,7 @@ export default function PinnedProjectsSlider({ projects, translations }: PinnedP
                       href={selectedProject.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[var(--color-accent-violet)] hover:bg-[var(--color-accent-violet)]/80 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors"
+                      className="bg-[var(--color-accent-violet)] hover:bg-[var(--color-accent-violet)]/80 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-colors"
                     >
                       {translations.actions.visitProject}
                       <ExternalLink className="w-4 h-4" />

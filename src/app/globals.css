@@ -128,6 +128,13 @@
   }
 }
 
+/* Transition bounce réutilisable */
+@layer utilities {
+  .transition-bounce {
+    transition: all 0.5s cubic-bezier(0.34, 1.36, 0.44, 1);
+  }
+}
+
 .mouse {
   background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #ffffff 50%, #ffffff 100%);
   position: absolute;

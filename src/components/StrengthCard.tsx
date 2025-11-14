@@ -21,7 +21,7 @@ export default function StrengthCard({ title, description, icon, index }: Streng
         ease: "easeOut"
       }}
       viewport={{ once: true, margin: "-50px" }}
-      className="flex flex-col items-center text-center gap-4 p-8 bg-neutral-900/30 border border-neutral-800 rounded-xl hover:border-neutral-700 transition-colors duration-300"
+      className="flex flex-col items-center text-center gap-4 p-8 bg-neutral-900/30 border border-neutral-800 rounded-4xl hover:border-neutral-700 transition-colors duration-300"
     >
       <div className="text-white w-12 h-12">
         {icon}

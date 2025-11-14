@@ -142,7 +142,7 @@
       },
       {
         "name": "Backend",
-        "items": ["Node.js", "Python", "PostgreSQL", "MongoDB"]
+        "items": ["Node.js", "Python", "PostgreSQL", "MongoDB", "n8n"]
       },
       {
         "name": "Intelligence Artificielle",
@@ -161,7 +161,8 @@
 
   "packages": {
     "title": "Nos Formules",
-    "description": "Des solutions adaptées à tous les budgets, du projet simple à l'application complexe.",
+    "description": "Des solutions adaptées à chaque ambition, comme nos sommets suisses.",
+    "bestOffer": "MEILLEURE OFFRE",
     "starter": {
       "name": "Salève",
       "mountainInfo": "Genève, 1379m",

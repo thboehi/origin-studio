@@ -15,7 +15,7 @@ export default function FAQItem({ question, answer, index }: FAQItemProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="bg-neutral-950 border border-neutral-800 rounded-lg p-6 hover:border-neutral-600 transition-colors"
+      className="bg-neutral-950 border border-neutral-800 rounded-4xl p-8 hover:border-neutral-600 transition-colors"
     >
       <h3 className="text-lg font-semibold text-white mb-3">{question}</h3>
       <p className="text-neutral-400 leading-relaxed">{answer}</p>

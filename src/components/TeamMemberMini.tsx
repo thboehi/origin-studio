@@ -20,7 +20,7 @@ export default function TeamMemberMini({ name, role, description, index }: TeamM
         ease: "easeOut"
       }}
       viewport={{ once: true, margin: "-50px" }}
-      className="flex flex-col gap-3 p-6 bg-neutral-900/50 border border-neutral-800 rounded-lg hover:border-neutral-700 transition-colors duration-300"
+      className="flex flex-col gap-3 p-6 bg-neutral-900/50 border border-neutral-800 rounded-4xl hover:border-neutral-700 transition-colors duration-300"
     >
       <div>
         <h3 className="text-lg font-bold text-white">
