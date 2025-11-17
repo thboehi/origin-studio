@@ -33,26 +33,12 @@ export async function generateMetadata({
 
 async function getProjects(): Promise<ProjectsData> {
   try {
-    // En développement, on utilise le système de fichiers
-    if (process.env.NODE_ENV === 'development') {
-      const fs = await import('fs');
-      const path = await import('path');
-      
-            const filePath = path.join(process.cwd(), 'public/projects.json');
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      return JSON.parse(fileContents);
-    } else {
-      // En production, on utilise fetch avec l'URL complète
-      const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || ''}projects.json`, {
-        cache: 'no-store'
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch projects');
-      }
-      
-      return response.json();
-    }
+    const fs = await import('fs');
+    const path = await import('path');
+
+    const filePath = path.join(process.cwd(), 'public', 'projects.json');
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    return JSON.parse(fileContents);
   } catch (error) {
     console.error('Error loading projects:', error);
     // Retourner des données par défaut en cas d'erreur

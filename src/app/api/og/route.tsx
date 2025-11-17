@@ -1,7 +1,10 @@
-import { ImageResponse } from '@vercel/og';
+import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export const runtime = 'nodejs';
 
 export async function GET(request: NextRequest) {
   try {
@@ -9,11 +12,22 @@ export async function GET(request: NextRequest) {
     const title = searchParams.get('title') || 'Origin Studio';
     const description = searchParams.get('description') || 'Agence digitale';
 
-    // Charger les variantes Regular et Bold depuis le dossier public via HTTP (compatible Edge)
-    const [regularFontData, boldFontData] = await Promise.all([
-      fetch(new URL('/fonts/FunnelDisplay-Regular.ttf', request.url)).then((res) => res.arrayBuffer()),
-      fetch(new URL('/fonts/FunnelDisplay-Bold.ttf', request.url)).then((res) => res.arrayBuffer()),
-    ]);
+    // Charger les variantes Regular et Bold depuis le système de fichiers (runtime Node.js)
+    const regularFontFile = fs.readFileSync(
+      path.join(process.cwd(), 'public', 'fonts', 'FunnelDisplay-Regular.ttf')
+    );
+    const boldFontFile = fs.readFileSync(
+      path.join(process.cwd(), 'public', 'fonts', 'FunnelDisplay-Bold.ttf')
+    );
+
+    const regularFontData = regularFontFile.buffer.slice(
+      regularFontFile.byteOffset,
+      regularFontFile.byteOffset + regularFontFile.byteLength
+    );
+    const boldFontData = boldFontFile.buffer.slice(
+      boldFontFile.byteOffset,
+      boldFontFile.byteOffset + boldFontFile.byteLength
+    );
 
     return new ImageResponse(
       (
@@ -119,13 +133,13 @@ export async function GET(request: NextRequest) {
         fonts: [
           {
             name: 'Funnel Display',
-            data: regularFontData,
+            data: regularFontData as unknown as ArrayBuffer,
             weight: 400,
             style: 'normal',
           },
           {
             name: 'Funnel Display',
-            data: boldFontData,
+            data: boldFontData as unknown as ArrayBuffer,
             weight: 700,
             style: 'normal',
           },
