@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 interface ProcessStepProps {
   number: string;
@@ -21,14 +21,33 @@ export default function ProcessStep({
   index,
   isLast,
 }: ProcessStepProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="relative">
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        viewport={{ once: true }}
-        className="flex flex-col md:flex-row gap-6 items-start"
+      <div
+        ref={ref}
+        className={`flex flex-col md:flex-row gap-6 items-start ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}
+        style={{ animationDelay: isVisible ? `${index * 100}ms` : '0ms' }}
       >
         {/* Number Circle */}
         <div className="flex-shrink-0">
@@ -43,7 +62,7 @@ export default function ProcessStep({
           <p className="text-neutral-400 mb-2 leading-relaxed">{description}</p>
           <p className="text-sm text-neutral-500 italic">{durationLabel} {duration}</p>
         </div>
-      </motion.div>
+      </div>
 
       {/* Connector Line */}
       {!isLast && (

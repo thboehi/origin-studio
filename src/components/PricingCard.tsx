@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
@@ -31,17 +31,36 @@ export default function PricingCard({
   serviceId,
   index,
 }: PricingCardProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className={`relative bg-neutral-950 rounded-4xl p-8 transition-all duration-500 ${
+    <div
+      ref={ref}
+      className={`relative bg-neutral-950 rounded-4xl p-8 transition-all duration-500 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} ${
         highlighted
           ? "border-2 border-[var(--color-accent-violet)] shadow-[0_0_30px_rgba(95,16,220,0.3)] scale-105"
           : "border border-neutral-800 hover:border-neutral-600"
       }`}
+      style={{ animationDelay: isVisible ? `${index * 100}ms` : '0ms' }}
     >
       {highlighted && bestOffer && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[var(--color-accent-violet)] text-white px-4 py-1 rounded-full text-sm font-semibold">
@@ -97,6 +116,6 @@ export default function PricingCard({
           {cta}
         </Button>
       </Link>
-    </motion.div>
+    </div>
   );
 }

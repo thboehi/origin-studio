@@ -1,7 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
 
 interface ServiceCardProps {
@@ -21,13 +20,32 @@ export default function ServiceCard({
   icon,
   index,
 }: ServiceCardProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="group relative bg-neutral-950 rounded-4xl border border-neutral-800 p-8 hover:border-neutral-600 transition-all duration-500 hover:drop-shadow-[0_8px_60px_rgba(95,16,220,0.3)] overflow-hidden"
+    <div
+      ref={ref}
+      className={`group relative bg-neutral-950 rounded-4xl border border-neutral-800 p-8 hover:border-neutral-600 transition-all duration-500 hover:drop-shadow-[0_8px_60px_rgba(95,16,220,0.3)] overflow-hidden ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+      style={{ animationDelay: isVisible ? `${index * 100}ms` : '0ms' }}
     >
       {/* Icône en arrière-plan */}
       <div className="absolute right-0 top-0 h-full w-full flex items-center justify-end opacity-5 pointer-events-none box-border">
@@ -54,6 +72,6 @@ export default function ServiceCard({
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
