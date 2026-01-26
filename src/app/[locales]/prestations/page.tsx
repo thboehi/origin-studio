@@ -22,7 +22,13 @@ export default async function Services({
 }) {
   const { locales } = await params;
   const dictionary = await getDictionary(locales);
-  const services = dictionary.services!;
+  
+  // Vérification de sécurité
+  if (!dictionary || !dictionary.services) {
+    throw new Error(`Dictionary not found for locale: ${locales}`);
+  }
+  
+  const services = dictionary.services;
 
   const serviceIcons: { [key: string]: React.ReactNode } = {
     "web-development": <CodeIcon className="w-8 h-8" />,

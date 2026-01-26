@@ -130,6 +130,12 @@ export default async function LocaleLayout({
 }>) {
   const { locales } = await params;
   const dictionary = await getDictionary(locales);
+  
+  // Vérification de sécurité
+  if (!dictionary) {
+    throw new Error(`Dictionary not found for locale: ${locales}`);
+  }
+  
   const footer = dictionary.footer as FooterTranslations;
   
   // JSON-LD Schema pour le SEO structuré

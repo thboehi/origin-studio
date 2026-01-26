@@ -20,6 +20,16 @@ function getLocale(request: NextRequest) {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   
+  // Exclure les fichiers statiques (images, etc.)
+  if (pathname.match(/\.(png|jpg|jpeg|gif|webp|svg|ico|json|JPG|PNG|JPEG|GIF|WEBP|SVG)$/i)) {
+    return;
+  }
+  
+  // Exclure le dossier uploads
+  if (pathname.startsWith('/uploads')) {
+    return;
+  }
+  
   // Si on est à la racine, on redirige vers le français
   if (pathname === '/') {
     return NextResponse.redirect(new URL('/fr', request.url));
@@ -57,6 +67,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next|api|favicon.ico|icon.svg|img|fonts|uploads|.*\\.json).*)',
+    '/((?!_next|api|favicon.ico|icon.svg|img|fonts).*)',
   ],
 };

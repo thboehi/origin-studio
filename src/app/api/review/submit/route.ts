@@ -90,42 +90,36 @@ async function sendDiscordWebhook(data: {
   text: string;
   imageUrl?: string;
 }) {
-  const stars = "⭐".repeat(data.rating);
+  const stars = "★".repeat(data.rating) + "☆".repeat(5 - data.rating);
+  const ratingColor = data.rating >= 4 ? 0x5F10DC : data.rating >= 3 ? 0x8B5CF6 : 0x6B7280;
+  
   const embed = {
     embeds: [
       {
-        title: "🎉 Nouvel avis client !",
-        color: data.rating >= 4 ? 0x00ff00 : data.rating >= 3 ? 0xffa500 : 0xff0000,
+        color: ratingColor,
+        author: {
+          name: `${data.firstName} ${data.lastName}`,
+          icon_url: data.imageUrl || undefined,
+        },
         fields: [
           {
-            name: "👤 Client",
-            value: `${data.firstName} ${data.lastName}${data.company ? ` - ${data.company}` : ""}`,
-            inline: true,
+            name: " ",
+            value: `${stars}\n\n${data.text.substring(0, 2048)}`,
           },
           {
-            name: "📧 Email",
+            name: "Contact",
             value: data.email,
             inline: true,
           },
-          {
-            name: "⭐ Note",
-            value: `${stars} (${data.rating}/5)`,
-            inline: true,
-          },
-          {
-            name: "💬 Avis",
-            value: data.text.substring(0, 1024), // Discord limite à 1024 caractères
-          },
+          ...(data.company ? [
+            {
+              name: "Entreprise",
+              value: data.company,
+              inline: true,
+            },
+          ] : []),
         ],
-        thumbnail: data.imageUrl
-          ? {
-              url: data.imageUrl,
-            }
-          : undefined,
         timestamp: new Date().toISOString(),
-        footer: {
-          text: "Origin Studio - Système d'avis",
-        },
       },
     ],
   };
@@ -257,7 +251,7 @@ export async function POST(request: NextRequest) {
       const publicPath = join(process.cwd(), "public", "uploads", filename);
       await writeFile(publicPath, buffer);
       
-      imagePath = `/uploads/${filename}`;
+      imagePath = `/api/uploads/${filename}`;
       imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://origin-studio.ch"}${imagePath}`;
     }
 

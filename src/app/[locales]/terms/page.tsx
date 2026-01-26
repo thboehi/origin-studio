@@ -8,6 +8,12 @@ export default async function TermsPage({
 }) {
   const { locales } = await params;
   const dictionary = await getDictionary(locales);
+  
+  // Vérification de sécurité
+  if (!dictionary || !dictionary.legal) {
+    throw new Error(`Dictionary not found for locale: ${locales}`);
+  }
+  
   const legal = dictionary.legal;
   const terms = legal.terms;
 

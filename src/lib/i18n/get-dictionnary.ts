@@ -17,5 +17,7 @@ const dictionaries: Record<'fr' | 'en' | 'de', Dictionary> = {
 
 // Fonction qui retourne le dictionnaire correspondant à la locale demandée
 export const getDictionary = async (locale: 'fr' | 'en' | 'de'): Promise<Dictionary> => {
-  return dictionaries[locale];
+  // Vérifier que la locale est valide, sinon utiliser 'fr' par défaut
+  const validLocale = locale && dictionaries[locale] ? locale : 'fr';
+  return dictionaries[validLocale];
 };

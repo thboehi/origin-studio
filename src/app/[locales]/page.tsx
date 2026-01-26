@@ -32,6 +32,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locales } = await params;
   const dictionary = await getDictionary(locales);
+  
+  // Vérification de sécurité
+  if (!dictionary || !dictionary.hero) {
+    return {
+      title: 'Origin Studio',
+      description: 'Origin Studio - Web Development & Design',
+    };
+  }
+  
   const domain = "https://origin-studio.ch";
   
   return {
@@ -60,6 +69,12 @@ export default async function Home({
 
   // Fonction pour récupérer les traductions en fonction de la locale
   const dictionary = await getDictionary(locales);
+  
+  // Vérification de sécurité
+  if (!dictionary) {
+    throw new Error(`Dictionary not found for locale: ${locales}`);
+  }
+  
   const features = dictionary.features as FeaturesTranslations;
   const processTranslations = dictionary.process as ProcessTranslations;
   const identity = dictionary.identity as IdentityTranslations;

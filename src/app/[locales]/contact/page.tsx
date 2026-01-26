@@ -12,6 +12,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locales } = await params;
   const dictionary = await getDictionary(locales);
+  
+  // Vérification de sécurité
+  if (!dictionary || !dictionary.contact) {
+    return {
+      title: 'Contact - Origin Studio',
+      description: 'Origin Studio - Web Development & Design',
+    };
+  }
+  
   const domain = "https://origin-studio.ch";
   
   return {
@@ -37,6 +46,12 @@ export default async function Contact({
 }) {
   const { locales } = await params;
   const dictionary = await getDictionary(locales);
+  
+  // Vérification de sécurité
+  if (!dictionary) {
+    throw new Error(`Dictionary not found for locale: ${locales}`);
+  }
+  
   const contact = dictionary.contact;
   const cta = dictionary.cta;
 
