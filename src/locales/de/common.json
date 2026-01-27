@@ -305,14 +305,15 @@
     "description": "Drei Fachbereiche, eine Vision: Ihre Ideen in bemerkenswerte digitale Lösungen verwandeln.",
     "services": {
       "title": "Dienstleistungen",
-      "features": "Funktionen",
-      "customers": "Kunden",
-      "whyUs": "Warum wir",
+      "features": "Unsere Dienstleistungen",
+      "projects": "Unsere Projekte",
+      "faq": "FAQ",
       "pricing": "Preise"
     },
     "aboutUs": {
       "title": "Über uns",
       "aboutUs": "Über uns",
+      "values": "Unsere Werte",
       "careers": "Karriere",
       "blog": "Blog",
       "contact": "Kontakt"

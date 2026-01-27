@@ -156,7 +156,7 @@ export default async function About({
       </section>
 
       {/* Values Section */}
-      <section className="w-full flex flex-col items-center justify-center py-[25vh] px-4">
+      <section id="values" className="w-full flex flex-col items-center justify-center py-[25vh] px-4">
         <SectionTitle className="mb-6">
           {about.values.title}
         </SectionTitle>

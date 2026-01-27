@@ -305,14 +305,15 @@
     "description": "Trois expertises, une vision : transformer vos idées en solutions digitales remarquables.",
     "services": {
       "title": "Services",
-      "features": "Fonctionnalités",
-      "customers": "Clients",
-      "whyUs": "Pourquoi Nous",
+      "features": "Nos Services",
+      "projects": "Nos Projets",
+      "faq": "FAQ",
       "pricing": "Tarification"
     },
     "aboutUs": {
       "title": "À Propos",
       "aboutUs": "À Propos",
+      "values": "Nos Valeurs",
       "careers": "Carrières",
       "blog": "Blog",
       "contact": "Contact"

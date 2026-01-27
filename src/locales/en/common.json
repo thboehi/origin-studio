@@ -305,14 +305,15 @@
     "description": "Three areas of expertise, one vision: transforming your ideas into remarkable digital solutions.",
     "services": {
       "title": "Services",
-      "features": "Features",
-      "customers": "Customers",
-      "whyUs": "Why Us",
+      "features": "Our Services",
+      "projects": "Our Projects",
+      "faq": "FAQ",
       "pricing": "Pricing"
     },
     "aboutUs": {
       "title": "About Us",
       "aboutUs": "About Us",
+      "values": "Our Values",
       "careers": "Careers",
       "blog": "Blog",
       "contact": "Contact"

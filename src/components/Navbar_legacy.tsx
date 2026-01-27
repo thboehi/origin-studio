@@ -8,11 +8,11 @@ import { MobileNavbar } from "./Mobile-Navbar";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { Dictionary } from "@/types/dictionary";
 
 export const Navbar = ({ params }: { params: { locales: "fr" | "en" | "de" } }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [dictionary, setDictionary] = useState<any>(null);
+  const [dictionary, setDictionary] = useState<Dictionary | null>(null);
   const [isToggleOpen, setIsToggleOpen] = useState(false);
   const [backgroundStyle, setBackgroundStyle] = useState({ 
     opacity: 0, 
@@ -24,7 +24,7 @@ export const Navbar = ({ params }: { params: { locales: "fr" | "en" | "de" } }) 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
   
-  const navItems = [
+  const navItems: { href: string; key: keyof Dictionary["nav"] }[] = [
     { href: "/", key: "home" },
     { href: "/prestations", key: "prestations" },
     { href: "/about", key: "about" },

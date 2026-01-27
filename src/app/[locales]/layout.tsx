@@ -137,7 +137,8 @@ export default async function LocaleLayout({
   }
   
   const footer = dictionary.footer as FooterTranslations;
-  
+  const currentYear = new Date().getFullYear();
+
   // JSON-LD Schema pour le SEO structuré
   const jsonLd = {
     "@context": "https://schema.org",
@@ -182,7 +183,7 @@ export default async function LocaleLayout({
       <DarkVeilWrapper />
       <Navbar params={{ locales }} />
       {children}
-      <Footer dictionary={footer} />
+      <Footer dictionary={footer} locale={locales} year={currentYear} />
     </>
   );
 }

@@ -305,13 +305,14 @@ export type FooterTranslations = {
   services: {
     title: string;
     features: string;
-    customers: string;
-    whyUs: string;
+    projects: string;
+    faq: string;
     pricing: string;
   };
   aboutUs: {
     title: string;
     aboutUs: string;
+    values: string;
     careers: string;
     blog: string;
     contact: string;

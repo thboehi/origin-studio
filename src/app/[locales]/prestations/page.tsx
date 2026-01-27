@@ -49,7 +49,7 @@ export default async function Services({
       />
 
       {/* Services Section */}
-      <section className="w-full flex flex-col items-center justify-start py-[15vh] px-4">
+      <section id="services" className="w-full flex flex-col items-center justify-start py-[15vh] px-4">
         <div className="max-w-7xl w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -143,7 +143,7 @@ export default async function Services({
       </section>
 
       {/* Packages Section */}
-      <section className="w-full flex flex-col items-center justify-center py-[15vh] px-4">
+      <section id="pricing" className="w-full flex flex-col items-center justify-center py-[15vh] px-4">
         <div className="max-w-7xl w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -234,7 +234,7 @@ export default async function Services({
       </section>
 
       {/* FAQ Section */}
-      <section className="w-full flex flex-col items-center justify-center py-[15vh] px-4">
+      <section id="faq" className="w-full flex flex-col items-center justify-center py-[15vh] px-4">
         <div className="max-w-4xl w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

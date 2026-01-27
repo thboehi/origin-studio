@@ -1,14 +1,16 @@
 "use client"
 
-import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { FooterTranslations } from "@/types/translations";
 
+type Props = {
+  dictionary: FooterTranslations;
+  locale: "fr" | "en" | "de";
+  year: number;
+};
 
-export default function FooterFiveColsLogoSubFooter({ dictionary }: { dictionary: FooterTranslations }) {
-    const params = useParams();
-    const locale = params.locales as string;
+export default function FooterFiveColsLogoSubFooter({ dictionary, locale, year }: Props) {
     return (
       <footer className="w-full text-neutral-400">
         {/* Main footer */}
@@ -33,22 +35,22 @@ export default function FooterFiveColsLogoSubFooter({ dictionary }: { dictionary
                   </h3>
                   <ul className="space-y-2">
                     <li>
-                      <Link href={`/${locale}`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
+                      <Link href={`/${locale}/prestations#services`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
                         {dictionary.services.features}
                       </Link>
                     </li>
                     <li>
                       <Link href={`/${locale}/projects`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
-                        {dictionary.services.customers}
+                        {dictionary.services.projects}
                       </Link>
                     </li>
                     <li>
-                      <Link href={`/${locale}/about`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
-                        {dictionary.services.whyUs}
+                      <Link href={`/${locale}/prestations#faq`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
+                        {dictionary.services.faq}
                       </Link>
                     </li>
                     <li>
-                      <Link href={`/${locale}/prestations`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
+                      <Link href={`/${locale}/prestations#pricing`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
                         {dictionary.services.pricing}
                       </Link>
                     </li>
@@ -71,8 +73,8 @@ export default function FooterFiveColsLogoSubFooter({ dictionary }: { dictionary
                       </a>
                     </li> */}
                     <li>
-                      <Link href={`/${locale}/contact`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
-                        {dictionary.aboutUs.contact}
+                      <Link href={`/${locale}/about#values`} className="transition-colors duration-300 hover:text-neutral-50 focus:text-neutral-50">
+                        {dictionary.aboutUs.values}
                       </Link>
                     </li>
                   </ul>
@@ -110,7 +112,7 @@ export default function FooterFiveColsLogoSubFooter({ dictionary }: { dictionary
           <div className="container px-6 mx-auto">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <div>
-                © {new Date().getFullYear()} Origin Studio. {locale === 'en' ? 'All rights reserved' : 'Tous droits réservés'}
+                © {year} Origin Studio. {locale === 'en' ? 'All rights reserved' : 'Tous droits réservés'}
               </div>
               <nav aria-labelledby="subfooter-links-3-sub">
                 <h3 className="sr-only" id="subfooter-links-3-sub">Get in touch</h3>
