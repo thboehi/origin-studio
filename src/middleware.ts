@@ -20,6 +20,16 @@ function getLocale(request: NextRequest) {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   
+  // Images optimisées Next.js - cache très agressif
+  if (pathname.startsWith('/_next/image')) {
+    const response = NextResponse.next();
+    response.headers.set(
+      'Cache-Control',
+      'public, max-age=31536000, immutable'
+    );
+    return response;
+  }
+  
   // Fichiers statiques - cache agressif (1 an)
   if (pathname.match(/\.(png|jpg|jpeg|gif|webp|svg|ico|json|JPG|PNG|JPEG|GIF|WEBP|SVG)$/i)) {
     const response = NextResponse.next();
