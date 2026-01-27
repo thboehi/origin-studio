@@ -52,10 +52,7 @@ Envoyé automatiquement après la soumission de l'avis avec :
 - Message de remerciement
 
 #### Webhook Discord
-Un message embed est envoyé au webhook Discord :
-```
-https://discord.com/api/webhooks/1465388648399900898/37Io_pskliWkSIKQqfq4zNW-v8XBfVjV2AUHnhhbpBzECkq77L69sxvdiYpZAg_8s5mh
-```
+Un message embed est envoyé au webhook Discord (.env)
 
 Le message contient :
 - 👤 Nom complet + entreprise

@@ -99,7 +99,7 @@ async function sendDiscordWebhook(data: {
   const ratingColor = data.rating >= 4 ? 0x5F10DC : data.rating >= 3 ? 0x8B5CF6 : 0x6B7280;
   
   const embed = {
-    content: `<@&1404370035887046817>\n-# Nouvel avis de ${data.firstName} ${data.lastName}`,
+    content: `<@&1404370035887046817>\n-# Nouvel avis de ${data.firstName} ${data.lastName}\n-# ${data.imageUrl ? `[Photo de profil](${data.imageUrl})` : "L'utilisateur n'a pas fourni de photo"}`,
     embeds: [
       {
         color: ratingColor,
