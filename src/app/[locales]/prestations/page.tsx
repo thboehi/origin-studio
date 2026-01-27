@@ -32,7 +32,7 @@ export default async function Services({
 
   const serviceIcons: { [key: string]: React.ReactNode } = {
     "web-development": <CodeIcon className="w-8 h-8" />,
-    "ai-solutions": <BrainCircuitIcon className="w-8 h-8" />,
+    "ai-automation": <BrainCircuitIcon className="w-8 h-8" />,
     infrastructure: <ShieldCheckIcon className="w-8 h-8" />,
     design: <PaletteIcon className="w-8 h-8" />,
     maintenance: <WrenchIcon className="w-8 h-8" />,
