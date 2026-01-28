@@ -50,14 +50,14 @@ export default function TestimonialCard({
     ? '/img/testimonials/placeholder.webp' 
     : `/img/testimonials/${image}`;
   
-  // Classes conditionnelles selon la taille
+  // Classes conditionnelles selon la taille - responsive
   const containerClasses = size === 'small'
-    ? 'p-4 text-sm' // Small: padding et texte réduits
-    : 'p-8'; // Default: padding normal
+    ? 'p-4 sm:p-5 text-sm' // Small: padding responsive
+    : 'p-5 sm:p-6 md:p-8'; // Default: padding responsive
   
-  const minHeight = size === 'small' ? '200px' : '320px';
-  const starSize = size === 'small' ? 'w-4 h-4' : 'w-5 h-5';
-  const avatarSize = size === 'small' ? 'w-10 h-10' : 'w-12 h-12';
+  const minHeight = size === 'small' ? '180px' : '280px'; // Hauteurs réduites pour mobile
+  const starSize = size === 'small' ? 'w-3.5 h-3.5 sm:w-4 sm:h-4' : 'w-4 h-4 sm:w-5 sm:h-5';
+  const avatarSize = size === 'small' ? 'w-8 h-8 sm:w-10 sm:h-10' : 'w-10 h-10 sm:w-12 sm:h-12';
   
   return (
     <div
@@ -69,7 +69,7 @@ export default function TestimonialCard({
     >
       {/* Note en étoiles */}
       {rating && (
-        <div className="flex gap-1 mb-4">
+        <div className="flex gap-0.5 sm:gap-1 mb-3 sm:mb-4">
           {Array.from({ length: 5 }).map((_, i) => (
             <StarIcon
               key={i}
@@ -83,10 +83,10 @@ export default function TestimonialCard({
 
       {/* Texte du témoignage */}
       <div className="relative flex-1 flex flex-col">
-        <p className={`text-neutral-300 italic leading-relaxed mb-2 flex-1 ${
+        <p className={`text-neutral-300 italic leading-relaxed text-sm sm:text-base ${
           size === 'small' 
-            ? 'line-clamp-3' // Small: toujours 3 lignes max
-            : (!isExpanded && needsExpansion ? 'line-clamp-4' : '') // Default: 4 lignes avec expand
+            ? 'line-clamp-5' // Small: toujours 3 lignes max
+            : (!isExpanded && needsExpansion ? 'line-clamp-5 sm:line-clamp-3' : '') // Default: 3 lignes mobile, 4 desktop
         }`}>
           &ldquo;{text}&rdquo;
         </p>
@@ -94,7 +94,7 @@ export default function TestimonialCard({
         {needsExpansion && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 mt-2 self-start cursor-pointer"
+            className="text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 mt-2 self-start cursor-pointer"
           >
             {isExpanded ? showLessText : showMoreText}
           </button>
@@ -103,7 +103,7 @@ export default function TestimonialCard({
 
       {/* Auteur avec photo */}
       {author && (
-        <div className={`flex items-center gap-3 ${size === 'small' ? 'mt-4' : 'mt-6'}`}>
+        <div className={`flex items-center gap-2 sm:gap-3 ${size === 'small' ? 'mt-3 sm:mt-4' : 'mt-4 sm:mt-6'}`}>
           <div className={`relative ${avatarSize} rounded-full overflow-hidden flex-shrink-0 bg-neutral-800`}>
             <Image
               src={imageSrc}
@@ -113,7 +113,7 @@ export default function TestimonialCard({
               onError={() => setImgError(true)}
             />
           </div>
-          <div className={size === 'small' ? 'text-xs' : 'text-sm'}>
+          <div className={size === 'small' ? 'text-xs' : 'text-xs sm:text-sm'}>
             <p className="text-white font-medium">{displayName}</p>
             {company && <p className="text-neutral-500">{company}</p>}
           </div>

@@ -38,9 +38,9 @@ export default function TestimonialsSlider({
     ...testimonials
   ];
   
-  // Largeur des cards selon la taille
-  const cardWidth = size === 'small' ? 400 : 624; // small: 400px, default: 600px + 24px gap
-  const gapWidth = 24;
+  // Largeur des cards selon la taille - responsive
+  const cardWidth = size === 'small' ? 280 : 340; // Mobile: plus petites largeurs
+  const gapWidth = 16; // Gap réduit pour mobile
   const totalWidth = testimonials.length * (cardWidth + gapWidth);
 
   // Initialiser la position pour l'effet de boucle
@@ -161,7 +161,7 @@ export default function TestimonialsSlider({
         onMouseLeave={handleMouseLeave}
       >
       <motion.div
-        className="flex gap-6"
+        className="flex gap-4 sm:gap-6"
         style={{ x }}
         drag="x"
         dragConstraints={{ left: -totalWidth - 200, right: 200 }}
@@ -174,8 +174,7 @@ export default function TestimonialsSlider({
         {duplicatedTestimonials.map((testimonial, index) => (
           <div
             key={`${testimonial.id}-${index}`}
-            className={`flex-shrink-0 transition-opacity duration-700 ${isMounted ? 'opacity-100' : 'opacity-0'}`}
-            style={{ width: `${cardWidth}px` }}
+            className={`flex-shrink-0 transition-opacity duration-700 w-[280px] sm:w-[340px] md:w-[400px] lg:w-[${size === 'small' ? '400' : '624'}px] ${isMounted ? 'opacity-100' : 'opacity-0'}`}
           >
             <TestimonialCard
               text={testimonial.text}
