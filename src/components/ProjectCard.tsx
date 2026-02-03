@@ -34,10 +34,10 @@ export default function ProjectCard({ title, language, description, image, link,
         {/* Image */}
         <div className="relative h-48 overflow-hidden">
           <Image 
-            src={image} 
+            src={image}
             alt={title}
             fill
-            className="object-cover scale-110 group-hover:scale-100 transition-transform duration-200"
+            className="object-cover transition-transform duration-200"
           />
           <div className="absolute top-3 right-3 flex gap-2">
             <span className="text-xs bg-black/70 backdrop-blur-sm text-white px-2 py-1 rounded-full">

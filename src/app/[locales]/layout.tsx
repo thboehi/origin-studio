@@ -26,21 +26,21 @@ export async function generateMetadata({
   
   switch (locales) {
     case 'en':
-      title = "Origin Studio - Custom Web Development & AI Solutions";
-      description = "Swiss web agency specializing in custom web applications, private LLMs, and secure digital solutions. Three experts, one vision: transforming your ideas into remarkable digital solutions.";
-      keywords = "web development, custom applications, private LLM, AI solutions, Swiss hosting, web agency Switzerland, frontend, backend, digital transformation";
+      title = "Origin Studio - Custom Web Development & Automation Solutions";
+      description = "Swiss web agency specializing in custom web development, web applications and automation solutions. Automate your business tasks with n8n and AI. Three experts, one vision: transforming your ideas into remarkable digital solutions.";
+      keywords = "web development, custom web applications, automation solutions, n8n, business automation, web agency Switzerland, Swiss hosting, digital transformation, AI solutions, workflow automation";
       locale = 'en_US';
       break;
     case 'de':
-      title = "Origin Studio - Maßgeschneiderte Webentwicklung & KI-Lösungen";
-      description = "Schweizer Webagentur spezialisiert auf maßgeschneiderte Webanwendungen, private LLMs und sichere digitale Lösungen. Drei Experten, eine Vision: Ihre Ideen in bemerkenswerte digitale Lösungen verwandeln.";
-      keywords = "Webentwicklung, maßgeschneiderte Anwendungen, privates LLM, KI-Lösungen, Schweizer Hosting, Webagentur Schweiz, Frontend, Backend, digitale Transformation";
+      title = "Origin Studio - Maßgeschneiderte Webentwicklung & Automatisierungslösungen";
+      description = "Schweizer Webagentur spezialisiert auf maßgeschneiderte Webentwicklung, Webanwendungen und Automatisierungslösungen. Automatisieren Sie Ihre Unternehmensaufgaben mit n8n und KI. Drei Experten, eine Vision: Ihre Ideen in bemerkenswerte digitale Lösungen verwandeln.";
+      keywords = "Webentwicklung, maßgeschneiderte Webanwendungen, Automatisierungslösungen, n8n, Unternehmensautomatisierung, Webagentur Schweiz, Schweizer Hosting, digitale Transformation, KI Lösungen, Workflow-Automatisierung";
       locale = 'de_CH';
       break;
     default: // 'fr'
-      title = "Origin Studio - Développement Web sur Mesure & Solutions IA";
-      description = "Agence web suisse spécialisée dans les applications web sur mesure, les modèles de langage privés et les solutions numériques sécurisées. Trois experts, une vision : transformer vos idées en solutions digitales remarquables.";
-      keywords = "développement web, applications sur mesure, LLM privé, solutions IA, hébergement suisse, agence web Suisse, frontend, backend, transformation digitale";
+      title = "Origin Studio - Développement Web sur Mesure & Solutions d'Automatisation";
+      description = "Agence web suisse spécialisée dans le développement web sur mesure, les applications web et les solutions d'automatisation. Automatisez vos tâches d'entreprise avec n8n et l'IA. Trois experts, une vision : transformer vos idées en solutions digitales remarquables.";
+      keywords = "développement web, applications web sur mesure, solutions d'automatisation, n8n, automatisation entreprise, agence web Suisse, hébergement suisse, transformation digitale, solutions IA, workflow automation";
       locale = 'fr_CH';
       break;
   }
@@ -151,10 +151,10 @@ export default async function LocaleLayout({
     "@type": "Organization",
     "name": "Origin Studio",
     "url": domain,
-    "logo": `${domain}/logo_origin_full.svg`,
+    "logo": `${domain}/img/logo_origin_full.svg`,
     "description": locales === 'en' 
-      ? "Swiss web agency specializing in custom web applications, private LLMs, and secure digital solutions."
-      : "Agence web suisse spécialisée dans les applications web sur mesure, les modèles de langage privés et les solutions numériques sécurisées.",
+      ? "Swiss web agency specializing in custom web development, web applications and automation solutions. Automate your business tasks with n8n and AI."
+      : "Agence web suisse spécialisée dans le développement web sur mesure, les applications web et les solutions d'automatisation. Automatisez vos tâches d'entreprise avec n8n et l'IA.",
     "foundingLocation": {
       "@type": "Country",
       "name": "Switzerland"
@@ -163,7 +163,8 @@ export default async function LocaleLayout({
     "serviceType": [
       "Web Development",
       "Custom Web Applications", 
-      "Private LLM Integration",
+      "Business Automation Solutions",
+      "Workflow Automation",
       "AI Solutions",
       "Digital Transformation"
     ],
