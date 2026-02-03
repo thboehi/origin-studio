@@ -22,20 +22,23 @@ export default function DarkVeilWrapper() {
   }, []);
 
   // Opacity du voile: de 0 à 0.9
-  const veilOpacity = scrollProgress * 0.9;
+  const veilOpacity = scrollProgress * 0.5;
   // Blur: de 0px à 4px
-  const blurAmount = scrollProgress * 10;
+  // const blurAmount = scrollProgress * 10;
 
   return (
     <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
       <div
         className="w-full h-full relative"
-        style={{
-          filter: `blur(${blurAmount}px)`,
-          transition: "filter 0.3s ease-out",
-        }}
+        // style={{
+        //   filter: `blur(${blurAmount}px)`,
+        //   transition: "filter 0.3s ease-out",
+        // }}
       >
-        <DarkVeil />
+        <DarkVeil 
+          noiseIntensity={0.15}
+          speed={2}
+        />
       </div>
       {/* Voile assombrissant */}
       <div
