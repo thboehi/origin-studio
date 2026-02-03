@@ -66,10 +66,11 @@ function getClientIdentifier(request: NextRequest): string {
 }
 
 function createMailTransporter() {
+  const port = parseInt(process.env.SMTP_PORT || "587", 10);
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || "mail.infomaniak.com",
-    port: parseInt(process.env.SMTP_PORT || "587", 10),
-    secure: false, // true pour 465, false pour 587
+    host: process.env.SMTP_HOST || "smtp.hostinger.com",
+    port: port,
+    secure: port === 465, // true pour 465 (SSL/TLS), false pour 587 (STARTTLS)
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASSWORD,
