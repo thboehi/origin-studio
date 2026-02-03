@@ -66,7 +66,7 @@ function getClientIdentifier(request: NextRequest): string {
 }
 
 function createMailTransporter() {
-  const port = parseInt(process.env.SMTP_PORT || "587", 10);
+  const port = parseInt(process.env.SMTP_PORT || "465", 10);
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST || "smtp.hostinger.com",
     port: port,
