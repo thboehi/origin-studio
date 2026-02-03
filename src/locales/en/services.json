@@ -2,7 +2,6 @@
   "title": "Our Services",
   "subtitle": "Tailored digital solutions for your business",
   "intro": "From idea to implementation, we support you in creating high-performance, secure and scalable digital solutions.",
-  
   "services": {
     "title": "Our Services",
     "description": "Solutions adapted to your needs, developed with expertise and passion.",
@@ -87,7 +86,6 @@
       }
     ]
   },
-
   "process": {
     "title": "Our Process",
     "description": "Structured and transparent support, from idea to deployment.",
@@ -131,34 +129,60 @@
       }
     ]
   },
-
   "technologies": {
     "title": "Technologies & Technical Stack",
     "description": "We use modern, reliable and high-performance technologies to create sustainable solutions.",
     "categories": [
       {
         "name": "Frontend",
-        "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+        "items": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS"
+        ]
       },
       {
         "name": "Backend",
-        "items": ["Node.js", "Python", "PostgreSQL", "MongoDB", "n8n"]
+        "items": [
+          "Node.js",
+          "Python",
+          "PostgreSQL",
+          "MongoDB",
+          "n8n"
+        ]
       },
       {
         "name": "Artificial Intelligence",
-        "items": ["OpenAI", "LangChain", "Hugging Face", "TensorFlow"]
+        "items": [
+          "OpenAI",
+          "LangChain",
+          "Hugging Face",
+          "TensorFlow"
+        ]
       },
       {
         "name": "Infrastructure",
-        "items": ["Docker", "AWS", "Azure", "Vercel"]
+        "items": [
+          "Docker",
+          "Infomaniak",
+          "Hostinger"
+        ]
       },
       {
         "name": "Tools",
-        "items": ["Git", "GitHub", "Figma", "VS Code"]
+        "items": [
+          "Git",
+          "GitHub",
+          "Figma",
+          "VS Code"
+        ]
       }
-    ]
+    ],
+    "categories[3]": {
+      "items[1]": "Infomaniak"
+    }
   },
-
   "packages": {
     "title": "Our Packages",
     "description": "Solutions tailored to your needs, at every stage of your digital transformation.",
@@ -174,12 +198,30 @@
             "description": "Get started quickly with the essentials",
             "price": "2,500 - 3,500 CHF",
             "details": [
-              { "label": "Delivery", "value": "2-3 weeks" },
-              { "label": "Pages", "value": "3-5 pages" },
-              { "label": "Design", "value": "Adapted templates" },
-              { "label": "SEO", "value": "Basic" },
-              { "label": "Multilingual", "value": "—" },
-              { "label": "Support", "value": "1 month" }
+              {
+                "label": "Delivery",
+                "value": "2-3 weeks"
+              },
+              {
+                "label": "Pages",
+                "value": "3-5 pages"
+              },
+              {
+                "label": "Design",
+                "value": "Adapted templates"
+              },
+              {
+                "label": "SEO",
+                "value": "Basic"
+              },
+              {
+                "label": "Multilingual",
+                "value": "—"
+              },
+              {
+                "label": "Support",
+                "value": "1 month"
+              }
             ],
             "cta": "Request a quote"
           },
@@ -189,12 +231,30 @@
             "price": "5,000 - 8,000 CHF",
             "highlighted": true,
             "details": [
-              { "label": "Delivery", "value": "3-5 weeks" },
-              { "label": "Pages", "value": "6-10 pages" },
-              { "label": "Design", "value": "Custom design" },
-              { "label": "SEO", "value": "Advanced" },
-              { "label": "Multilingual", "value": "2 languages included" },
-              { "label": "Support", "value": "3 months" }
+              {
+                "label": "Delivery",
+                "value": "3-5 weeks"
+              },
+              {
+                "label": "Pages",
+                "value": "6-10 pages"
+              },
+              {
+                "label": "Design",
+                "value": "Custom design"
+              },
+              {
+                "label": "SEO",
+                "value": "Advanced"
+              },
+              {
+                "label": "Multilingual",
+                "value": "2 languages included"
+              },
+              {
+                "label": "Support",
+                "value": "3 months"
+              }
             ],
             "cta": "Let's discuss your project"
           },
@@ -203,12 +263,30 @@
             "description": "Complete and personalized solution",
             "price": "On quote",
             "details": [
-              { "label": "Delivery", "value": "6-10 weeks" },
-              { "label": "Pages", "value": "10+ pages" },
-              { "label": "Design", "value": "Premium design" },
-              { "label": "SEO", "value": "Complete strategy" },
-              { "label": "Multilingual", "value": "Unlimited" },
-              { "label": "Support", "value": "6 months + priority" }
+              {
+                "label": "Delivery",
+                "value": "6-10 weeks"
+              },
+              {
+                "label": "Pages",
+                "value": "10+ pages"
+              },
+              {
+                "label": "Design",
+                "value": "Premium design"
+              },
+              {
+                "label": "SEO",
+                "value": "Complete strategy"
+              },
+              {
+                "label": "Multilingual",
+                "value": "Unlimited"
+              },
+              {
+                "label": "Support",
+                "value": "6 months + priority"
+              }
             ],
             "cta": "Schedule a call"
           }
@@ -224,11 +302,26 @@
             "description": "Your first web application",
             "price": "8,000 - 12,000 CHF",
             "details": [
-              { "label": "Delivery", "value": "6-8 weeks" },
-              { "label": "Types", "value": "Responsive web app" },
-              { "label": "Dashboard", "value": "Basic" },
-              { "label": "Tests", "value": "Manual tests" },
-              { "label": "Support", "value": "2 months" }
+              {
+                "label": "Delivery",
+                "value": "6-8 weeks"
+              },
+              {
+                "label": "Types",
+                "value": "Responsive web app"
+              },
+              {
+                "label": "Dashboard",
+                "value": "Basic"
+              },
+              {
+                "label": "Tests",
+                "value": "Manual tests"
+              },
+              {
+                "label": "Support",
+                "value": "2 months"
+              }
             ],
             "cta": "Request a quote"
           },
@@ -238,11 +331,26 @@
             "price": "15,000 - 25,000 CHF",
             "highlighted": true,
             "details": [
-              { "label": "Delivery", "value": "10-14 weeks" },
-              { "label": "Types", "value": "Web app + PWA" },
-              { "label": "Dashboard", "value": "Complete" },
-              { "label": "Tests", "value": "Unit auto tests" },
-              { "label": "Support", "value": "4 months" }
+              {
+                "label": "Delivery",
+                "value": "10-14 weeks"
+              },
+              {
+                "label": "Types",
+                "value": "Web app + PWA"
+              },
+              {
+                "label": "Dashboard",
+                "value": "Complete"
+              },
+              {
+                "label": "Tests",
+                "value": "Unit auto tests"
+              },
+              {
+                "label": "Support",
+                "value": "4 months"
+              }
             ],
             "cta": "Let's discuss your project"
           },
@@ -251,11 +359,26 @@
             "description": "Multi-platform enterprise solution",
             "price": "On quote",
             "details": [
-              { "label": "Delivery", "value": "16 weeks +" },
-              { "label": "Types", "value": "Native multi-platform" },
-              { "label": "Dashboard", "value": "Enterprise" },
-              { "label": "Tests", "value": "Complete E2E tests" },
-              { "label": "Support", "value": "6 months + priority" }
+              {
+                "label": "Delivery",
+                "value": "16 weeks +"
+              },
+              {
+                "label": "Types",
+                "value": "Native multi-platform"
+              },
+              {
+                "label": "Dashboard",
+                "value": "Enterprise"
+              },
+              {
+                "label": "Tests",
+                "value": "Complete E2E tests"
+              },
+              {
+                "label": "Support",
+                "value": "6 months + priority"
+              }
             ],
             "cta": "Schedule a call"
           }
@@ -271,11 +394,26 @@
             "description": "Explore AI potential",
             "price": "2,000 - 4,000 CHF",
             "details": [
-              { "label": "Delivery", "value": "2-4 weeks" },
-              { "label": "Scope", "value": "1 use case" },
-              { "label": "Automation", "value": "1-2 workflows" },
-              { "label": "Monitoring", "value": "Basic logs" },
-              { "label": "Support", "value": "1 month" }
+              {
+                "label": "Delivery",
+                "value": "2-4 weeks"
+              },
+              {
+                "label": "Scope",
+                "value": "1 use case"
+              },
+              {
+                "label": "Automation",
+                "value": "1-2 workflows"
+              },
+              {
+                "label": "Monitoring",
+                "value": "Basic logs"
+              },
+              {
+                "label": "Support",
+                "value": "1 month"
+              }
             ],
             "cta": "Request a quote"
           },
@@ -285,11 +423,26 @@
             "price": "6,000 - 10,000 CHF",
             "highlighted": true,
             "details": [
-              { "label": "Delivery", "value": "6-10 weeks" },
-              { "label": "Scope", "value": "2-3 use cases" },
-              { "label": "Automation", "value": "3-6 workflows" },
-              { "label": "Monitoring", "value": "Metrics dashboard" },
-              { "label": "Support", "value": "3 months" }
+              {
+                "label": "Delivery",
+                "value": "6-10 weeks"
+              },
+              {
+                "label": "Scope",
+                "value": "2-3 use cases"
+              },
+              {
+                "label": "Automation",
+                "value": "3-6 workflows"
+              },
+              {
+                "label": "Monitoring",
+                "value": "Metrics dashboard"
+              },
+              {
+                "label": "Support",
+                "value": "3 months"
+              }
             ],
             "cta": "Let's discuss your project"
           },
@@ -298,11 +451,26 @@
             "description": "Complete operations transformation",
             "price": "On quote",
             "details": [
-              { "label": "Delivery", "value": "12 weeks +" },
-              { "label": "Scope", "value": "Complete strategy" },
-              { "label": "Automation", "value": "Unlimited" },
-              { "label": "Monitoring", "value": "Advanced analytics + alerts" },
-              { "label": "Support", "value": "6 months + priority" }
+              {
+                "label": "Delivery",
+                "value": "12 weeks +"
+              },
+              {
+                "label": "Scope",
+                "value": "Complete strategy"
+              },
+              {
+                "label": "Automation",
+                "value": "Unlimited"
+              },
+              {
+                "label": "Monitoring",
+                "value": "Advanced analytics + alerts"
+              },
+              {
+                "label": "Support",
+                "value": "6 months + priority"
+              }
             ],
             "cta": "Schedule a call"
           }
@@ -322,14 +490,38 @@
             "paymentOptions": "Payable in 4 installments over 12 months (400 CHF x 4)",
             "highlighted": true,
             "details": [
-              { "label": "Delivery", "value": "2-3 weeks" },
-              { "label": "Pages", "value": "1 page (+270 CHF/page)" },
-              { "label": "Sections", "value": "6 sections (+60 CHF/section)" },
-              { "label": "Design", "value": "Professional adapted templates" },
-              { "label": "SEO", "value": "Basic (keywords, meta tags)" },
-              { "label": "Multilingual", "value": "2 languages (FR + DE or EN)" },
-              { "label": "Support", "value": "2 months" },
-              { "label": "Hosting", "value": "1st year included" }
+              {
+                "label": "Delivery",
+                "value": "2-3 weeks"
+              },
+              {
+                "label": "Pages",
+                "value": "1 page (+270 CHF/page)"
+              },
+              {
+                "label": "Sections",
+                "value": "6 sections (+60 CHF/section)"
+              },
+              {
+                "label": "Design",
+                "value": "Professional adapted templates"
+              },
+              {
+                "label": "SEO",
+                "value": "Basic (keywords, meta tags)"
+              },
+              {
+                "label": "Multilingual",
+                "value": "2 languages (FR + DE or EN)"
+              },
+              {
+                "label": "Support",
+                "value": "2 months"
+              },
+              {
+                "label": "Hosting",
+                "value": "1st year included"
+              }
             ],
             "advantages": [
               "Professional website at reduced price to start your activity",
@@ -348,7 +540,6 @@
       }
     ]
   },
-
   "useCases": {
     "title": "Use Cases",
     "description": "Some examples of projects we can create together",
@@ -371,7 +562,6 @@
       }
     ]
   },
-
   "faq": {
     "title": "Frequently Asked Questions",
     "items": [
@@ -397,7 +587,6 @@
       }
     ]
   },
-
   "cta": {
     "title": "Ready to start your project?",
     "description": "Let's discuss your needs and find the solution that suits you together. First exchange without commitment.",

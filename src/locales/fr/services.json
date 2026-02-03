@@ -2,7 +2,6 @@
   "title": "Nos Prestations",
   "subtitle": "Des solutions digitales sur mesure pour votre entreprise",
   "intro": "De l'idée à la réalisation, nous vous accompagnons dans la création de solutions digitales performantes, sécurisées et évolutives.",
-  
   "services": {
     "title": "Nos Services",
     "description": "Des solutions adaptées à vos besoins, développées avec expertise et passion.",
@@ -87,7 +86,6 @@
       }
     ]
   },
-
   "process": {
     "title": "Notre Processus",
     "description": "Un accompagnement structuré et transparent, de l'idée au déploiement.",
@@ -131,34 +129,60 @@
       }
     ]
   },
-
   "technologies": {
     "title": "Technologies & Stack Technique",
     "description": "Nous utilisons des technologies modernes, fiables et performantes pour créer des solutions durables.",
     "categories": [
       {
         "name": "Frontend",
-        "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+        "items": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS"
+        ]
       },
       {
         "name": "Backend",
-        "items": ["Node.js", "Python", "PostgreSQL", "MongoDB", "n8n"]
+        "items": [
+          "Node.js",
+          "Python",
+          "PostgreSQL",
+          "MongoDB",
+          "n8n"
+        ]
       },
       {
         "name": "Intelligence Artificielle",
-        "items": ["OpenAI", "LangChain", "Hugging Face", "TensorFlow"]
+        "items": [
+          "OpenAI",
+          "LangChain",
+          "Hugging Face",
+          "TensorFlow"
+        ]
       },
       {
         "name": "Infrastructure",
-        "items": ["Docker", "AWS", "Azure", "Vercel"]
+        "items": [
+          "Docker",
+          "Infomaniak",
+          "Hostinger"
+        ]
       },
       {
         "name": "Outils",
-        "items": ["Git", "GitHub", "Figma", "VS Code"]
+        "items": [
+          "Git",
+          "GitHub",
+          "Figma",
+          "VS Code"
+        ]
       }
-    ]
+    ],
+    "categories[3]": {
+      "items[1]": "Infomaniak"
+    }
   },
-
   "packages": {
     "title": "Nos Formules",
     "description": "Des solutions adaptées à vos besoins, à chaque étape de votre transformation digitale.",
@@ -174,12 +198,30 @@
             "description": "Pour démarrer rapidement avec l'essentiel",
             "price": "2'500 - 3'500 CHF",
             "details": [
-              { "label": "Délai", "value": "2-3 semaines" },
-              { "label": "Pages", "value": "3-5 pages" },
-              { "label": "Design", "value": "Templates adaptés" },
-              { "label": "SEO", "value": "Basique" },
-              { "label": "Multilingue", "value": "—" },
-              { "label": "Support", "value": "1 mois" }
+              {
+                "label": "Délai",
+                "value": "2-3 semaines"
+              },
+              {
+                "label": "Pages",
+                "value": "3-5 pages"
+              },
+              {
+                "label": "Design",
+                "value": "Templates adaptés"
+              },
+              {
+                "label": "SEO",
+                "value": "Basique"
+              },
+              {
+                "label": "Multilingue",
+                "value": "—"
+              },
+              {
+                "label": "Support",
+                "value": "1 mois"
+              }
             ],
             "cta": "Demander un devis"
           },
@@ -189,12 +231,30 @@
             "price": "5'000 - 8'000 CHF",
             "highlighted": true,
             "details": [
-              { "label": "Délai", "value": "3-5 semaines" },
-              { "label": "Pages", "value": "6-10 pages" },
-              { "label": "Design", "value": "Design sur-mesure" },
-              { "label": "SEO", "value": "Avancé" },
-              { "label": "Multilingue", "value": "2 langues incluses" },
-              { "label": "Support", "value": "3 mois" }
+              {
+                "label": "Délai",
+                "value": "3-5 semaines"
+              },
+              {
+                "label": "Pages",
+                "value": "6-10 pages"
+              },
+              {
+                "label": "Design",
+                "value": "Design sur-mesure"
+              },
+              {
+                "label": "SEO",
+                "value": "Avancé"
+              },
+              {
+                "label": "Multilingue",
+                "value": "2 langues incluses"
+              },
+              {
+                "label": "Support",
+                "value": "3 mois"
+              }
             ],
             "cta": "Discutons de votre projet"
           },
@@ -203,12 +263,30 @@
             "description": "Solution complète et personnalisée",
             "price": "Sur devis",
             "details": [
-              { "label": "Délai", "value": "6-10 semaines" },
-              { "label": "Pages", "value": "10+ pages" },
-              { "label": "Design", "value": "Design premium" },
-              { "label": "SEO", "value": "Stratégie complète" },
-              { "label": "Multilingue", "value": "Illimité" },
-              { "label": "Support", "value": "6 mois + prioritaire" }
+              {
+                "label": "Délai",
+                "value": "6-10 semaines"
+              },
+              {
+                "label": "Pages",
+                "value": "10+ pages"
+              },
+              {
+                "label": "Design",
+                "value": "Design premium"
+              },
+              {
+                "label": "SEO",
+                "value": "Stratégie complète"
+              },
+              {
+                "label": "Multilingue",
+                "value": "Illimité"
+              },
+              {
+                "label": "Support",
+                "value": "6 mois + prioritaire"
+              }
             ],
             "cta": "Planifier un appel"
           }
@@ -224,11 +302,26 @@
             "description": "Votre première application web",
             "price": "8'000 - 12'000 CHF",
             "details": [
-              { "label": "Délai", "value": "6-8 semaines" },
-              { "label": "Types", "value": "Web app responsive" },
-              { "label": "Dashboard", "value": "Basique" },
-              { "label": "Tests", "value": "Tests manuels" },
-              { "label": "Support", "value": "2 mois" }
+              {
+                "label": "Délai",
+                "value": "6-8 semaines"
+              },
+              {
+                "label": "Types",
+                "value": "Web app responsive"
+              },
+              {
+                "label": "Dashboard",
+                "value": "Basique"
+              },
+              {
+                "label": "Tests",
+                "value": "Tests manuels"
+              },
+              {
+                "label": "Support",
+                "value": "2 mois"
+              }
             ],
             "cta": "Demander un devis"
           },
@@ -238,11 +331,26 @@
             "price": "15'000 - 25'000 CHF",
             "highlighted": true,
             "details": [
-              { "label": "Délai", "value": "10-14 semaines" },
-              { "label": "Types", "value": "Web app + PWA" },
-              { "label": "Dashboard", "value": "Complet" },
-              { "label": "Tests", "value": "Tests auto unitaires" },
-              { "label": "Support", "value": "4 mois" }
+              {
+                "label": "Délai",
+                "value": "10-14 semaines"
+              },
+              {
+                "label": "Types",
+                "value": "Web app + PWA"
+              },
+              {
+                "label": "Dashboard",
+                "value": "Complet"
+              },
+              {
+                "label": "Tests",
+                "value": "Tests auto unitaires"
+              },
+              {
+                "label": "Support",
+                "value": "4 mois"
+              }
             ],
             "cta": "Discutons de votre projet"
           },
@@ -251,11 +359,26 @@
             "description": "Solution entreprise multi-plateforme",
             "price": "Sur devis",
             "details": [
-              { "label": "Délai", "value": "16 semaines +" },
-              { "label": "Types", "value": "Native multi-plateforme" },
-              { "label": "Dashboard", "value": "Entreprise" },
-              { "label": "Tests", "value": "Tests E2E complets" },
-              { "label": "Support", "value": "6 mois + prioritaire" }
+              {
+                "label": "Délai",
+                "value": "16 semaines +"
+              },
+              {
+                "label": "Types",
+                "value": "Native multi-plateforme"
+              },
+              {
+                "label": "Dashboard",
+                "value": "Entreprise"
+              },
+              {
+                "label": "Tests",
+                "value": "Tests E2E complets"
+              },
+              {
+                "label": "Support",
+                "value": "6 mois + prioritaire"
+              }
             ],
             "cta": "Planifier un appel"
           }
@@ -271,11 +394,26 @@
             "description": "Explorez le potentiel de l'IA",
             "price": "2'000 - 4'000 CHF",
             "details": [
-              { "label": "Délai", "value": "2-4 semaines" },
-              { "label": "Périmètre", "value": "1 cas d'usage" },
-              { "label": "Automatisation", "value": "1-2 workflows" },
-              { "label": "Monitoring", "value": "Logs basiques" },
-              { "label": "Support", "value": "1 mois" }
+              {
+                "label": "Délai",
+                "value": "2-4 semaines"
+              },
+              {
+                "label": "Périmètre",
+                "value": "1 cas d'usage"
+              },
+              {
+                "label": "Automatisation",
+                "value": "1-2 workflows"
+              },
+              {
+                "label": "Monitoring",
+                "value": "Logs basiques"
+              },
+              {
+                "label": "Support",
+                "value": "1 mois"
+              }
             ],
             "cta": "Demander un devis"
           },
@@ -285,11 +423,26 @@
             "price": "6'000 - 10'000 CHF",
             "highlighted": true,
             "details": [
-              { "label": "Délai", "value": "6-10 semaines" },
-              { "label": "Périmètre", "value": "2-3 cas d'usage" },
-              { "label": "Automatisation", "value": "3-6 workflows" },
-              { "label": "Monitoring", "value": "Dashboard metrics" },
-              { "label": "Support", "value": "3 mois" }
+              {
+                "label": "Délai",
+                "value": "6-10 semaines"
+              },
+              {
+                "label": "Périmètre",
+                "value": "2-3 cas d'usage"
+              },
+              {
+                "label": "Automatisation",
+                "value": "3-6 workflows"
+              },
+              {
+                "label": "Monitoring",
+                "value": "Dashboard metrics"
+              },
+              {
+                "label": "Support",
+                "value": "3 mois"
+              }
             ],
             "cta": "Discutons de votre projet"
           },
@@ -298,11 +451,26 @@
             "description": "Transformation complète de vos opérations",
             "price": "Sur devis",
             "details": [
-              { "label": "Délai", "value": "12 semaines +" },
-              { "label": "Périmètre", "value": "Stratégie complète" },
-              { "label": "Automatisation", "value": "Illimité" },
-              { "label": "Monitoring", "value": "Analytics avancées + alertes" },
-              { "label": "Support", "value": "6 mois + prioritaire" }
+              {
+                "label": "Délai",
+                "value": "12 semaines +"
+              },
+              {
+                "label": "Périmètre",
+                "value": "Stratégie complète"
+              },
+              {
+                "label": "Automatisation",
+                "value": "Illimité"
+              },
+              {
+                "label": "Monitoring",
+                "value": "Analytics avancées + alertes"
+              },
+              {
+                "label": "Support",
+                "value": "6 mois + prioritaire"
+              }
             ],
             "cta": "Planifier un appel"
           }
@@ -322,14 +490,38 @@
             "paymentOptions": "Payable en 4x sur 12 mois (400 CHF x 4)",
             "highlighted": true,
             "details": [
-              { "label": "Délai", "value": "2-3 semaines" },
-              { "label": "Pages", "value": "1 page (+270 CHF/page)" },
-              { "label": "Sections", "value": "6 sections (+60 CHF/section)" },
-              { "label": "Design", "value": "Templates adaptés professionnels" },
-              { "label": "SEO", "value": "Basique (mots-clés, meta tags)" },
-              { "label": "Multilingue", "value": "2 langues (FR + DE ou EN)" },
-              { "label": "Support", "value": "2 mois" },
-              { "label": "Hébergement", "value": "1ère année incluse" }
+              {
+                "label": "Délai",
+                "value": "2-3 semaines"
+              },
+              {
+                "label": "Pages",
+                "value": "1 page (+270 CHF/page)"
+              },
+              {
+                "label": "Sections",
+                "value": "6 sections (+60 CHF/section)"
+              },
+              {
+                "label": "Design",
+                "value": "Templates adaptés professionnels"
+              },
+              {
+                "label": "SEO",
+                "value": "Basique (mots-clés, meta tags)"
+              },
+              {
+                "label": "Multilingue",
+                "value": "2 langues (FR + DE ou EN)"
+              },
+              {
+                "label": "Support",
+                "value": "2 mois"
+              },
+              {
+                "label": "Hébergement",
+                "value": "1ère année incluse"
+              }
             ],
             "advantages": [
               "Site professionnel à prix réduit pour démarrer votre activité",
@@ -348,7 +540,6 @@
       }
     ]
   },
-
   "useCases": {
     "title": "Cas d'Usage",
     "description": "Quelques exemples de projets que nous pouvons réaliser ensemble",
@@ -371,7 +562,6 @@
       }
     ]
   },
-
   "faq": {
     "title": "Questions Fréquentes",
     "items": [
@@ -397,7 +587,6 @@
       }
     ]
   },
-
   "cta": {
     "title": "Prêt à démarrer votre projet ?",
     "description": "Discutons de vos besoins et trouvons ensemble la solution qui vous convient. Premier échange sans engagement.",
