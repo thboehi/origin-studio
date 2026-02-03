@@ -6,11 +6,15 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -30,14 +34,21 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="manifest" href="/manifest.json" />
-        <script defer src="https://umami.ext4.ch/script.js" data-website-id="eb8645c7-36a1-4c3f-a9a8-947b512bb57b"></script>
+        
+        {/* Preload ressources critiques */}
+        <link rel="preload" href="/img/logo_origin_full.svg" as="image" type="image/svg+xml" />
         
         {/* Preconnect pour optimiser les performances */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://umami.ext4.ch" />
         
         {/* DNS prefetch pour les domaines externes si nécessaire */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//umami.ext4.ch" />
+        
+        {/* Analytics - defer pour ne pas bloquer le rendu */}
+        <script defer src="https://umami.ext4.ch/script.js" data-website-id="eb8645c7-36a1-4c3f-a9a8-947b512bb57b"></script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased w-full max-w-[100vw] overflow-x-hidden`}>
         {children}

@@ -20,13 +20,13 @@ export function HeroSlider({ dictionary }: { dictionary: Dictionary }) {
   const hero = dictionary.hero as HeroTranslations;
   const pathname = usePathname();
   const currentLocale = pathname.match(/^\/(fr|en|de)(?=\/|$)/)?.[1] || 'fr';
-  const [showLogo, setShowLogo] = useState(true);
+  const [showLogo, setShowLogo] = useState(false);
   
   useEffect(() => {
-    // Première transition après 2 secondes
+    // Première transition après 3 secondes (afficher le titre d'abord)
     const firstTimeout = setTimeout(() => {
-      setShowLogo(false);
-    }, 2000);
+      setShowLogo(true);
+    }, 3000);
 
     // Ensuite, alternance toutes les 5 secondes
     const interval = setInterval(() => {
@@ -74,7 +74,6 @@ export function HeroSlider({ dictionary }: { dictionary: Dictionary }) {
                   alt="Origin Studio Logo"
                   width={384}
                   height={128}
-                  priority
                   sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
                   className="w-64 md:w-80 lg:w-96 h-auto"
                 />

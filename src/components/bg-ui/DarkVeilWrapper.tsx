@@ -1,12 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import DarkVeil from "./DarkVeil";
+import dynamic from "next/dynamic";
+
+// Lazy load du composant WebGL lourd uniquement côté client
+const DarkVeil = dynamic(() => import("./DarkVeil"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gradient-to-b from-zinc-900 via-black to-black" />,
+});
 
 export default function DarkVeilWrapper() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+    
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
       const scrollTop = window.scrollY;
@@ -26,15 +35,18 @@ export default function DarkVeilWrapper() {
   // Blur: de 0px à 4px
   // const blurAmount = scrollProgress * 10;
 
+  // Ne rendre le composant WebGL que côté client
+  if (!isClient) {
+    return (
+      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
+        <div className="w-full h-full bg-gradient-to-b from-zinc-900 via-black to-black" />
+      </div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
-      <div
-        className="w-full h-full relative"
-        // style={{
-        //   filter: `blur(${blurAmount}px)`,
-        //   transition: "filter 0.3s ease-out",
-        // }}
-      >
+      <div className="w-full h-full relative">
         <DarkVeil 
           noiseIntensity={0.15}
           speed={2}
