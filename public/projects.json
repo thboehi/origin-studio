@@ -2,88 +2,13 @@
   "projects": [
     {
       "id": 1,
-      "title": "AlloVoisin",
+      "title": "Projet Exemple",
       "language": "Français",
-      "description": "Application de mise en relation entre voisins. Maquette avancée sur Figma avec interface utilisateur moderne et intuitive.\n\nCaractéristiques principales :\n• Design UX/UI complet sur Figma\n• Interface de mise en relation entre voisins\n• Système de géolocalisation\n• Messagerie intégrée\n• Profils utilisateurs détaillés",
-      "image": "/img/projects/allovoisin.webp",
-      "link": "https://www.figma.com/proto/g4lcK1DKSSVCCu2LgRUasK/AlloVoisin-0.2?node-id=161-3094&p=f&viewport=113%2C498%2C0.11&t=KqsYY1aBKzd0UcX1-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=161%3A3095&show-proto-sidebar=1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "image": "/img/projects/exemple.webp",
+      "link": "https://www.google.com/",
+      "pinned": true,
       "year": 2025
-    },
-    {
-      "id": 2,
-      "title": "Color Tools",
-      "language": "Français",
-      "description": "Outils pour les développeurs et designers web, incluant un algorithme avancé de détection des couleurs sombres ou claires et un outils de calcul de consommation avec des simulations.\n\nFonctionnalités :\n• Algorithme de détection couleurs sombres/claires\n• Outils de calcul de consommation\n• Simulations avancées\n• Documentation complète\n• API pour développeurs",
-      "image": "/img/projects/colortools.webp",
-      "link": "https://ct.thbo.ch/",
-      "year": 2025
-    },
-    {
-      "id": 3,
-      "title": "Crêpes & Cie",
-      "language": "Français",
-      "description": "Site vitrine pour une crêperie locale. Design moderne et responsive avec système de commande en ligne et présentation des produits.\n\nFonctionnalités :\n• Design responsive moderne\n• Présentation des menus\n• Informations pratiques\n• Galerie de produits",
-      "image": "/img/projects/crepescie.webp",
-      "link": "https://crepescie.ch/",
-      "year": 2023,
-      "pinned": true
-    },
-    {
-      "id": 4,
-      "title": "DrumnBass",
-      "language": "Français", 
-      "description": "Portfolio des artistes Azaph et Christus Rex, dans le domaine de la Drum & Bass. Présentation artistique avec lecteur audio intégré.\n\nCaractéristiques :\n• Portfolio artistique professionnel\n• Lecteur audio intégré\n• Galerie de tracks\n• Informations sur les artistes\n• Design immersif",
-      "image": "/img/projects/drumnbass.webp",
-      "link": "https://drumnbass.ch",
-      "year": 2024,
-      "pinned": true
-    },
-    {
-      "id": 5,
-      "title": "PrintLab",
-      "language": "Français",
-      "description": "Site web e-commerce réalisé sur mesure avec NextJS, Stripe et MongoDB pour une entreprise de vente d'impressions 3D et de consommables.\n\nTechnologies :\n• Next.js pour le frontend\n• Stripe pour les paiements\n• MongoDB pour la base de données\n• Gestion complète des commandes\n• Interface d'administration",
-      "image": "/img/projects/printlab.webp",
-      "link": "https://printlab3d.ch",
-      "year": 2025,
-      "pinned": false
-    },
-    {
-      "id": 6,
-      "title": "Live Voter",
-      "language": "Français",
-      "description": "Outils de vote en direct utilisant la technologie WebSocket pour des résultats en temps réel et développé en Next.js. Panel administrateur pour créer et gérer les sondages.\n\nFonctionnalités :\n• Votes en temps réel avec WebSockets\n• Panel administrateur complet\n• Gestion des sondages\n• Résultats instantanés\n• Interface responsive",
-      "image": "/img/projects/reglivevoter.webp",
-      "link": "https://reg-live.ext4.ch",
-      "year": 2025
-    },
-    {
-      "id": 7,
-      "title": "Snitch MC",
-      "language": "Français",
-      "description": "Application de dénonciation pour la communauté Minecraft francophone. Système de reporting avec modération et gestion communautaire.\n\nCaractéristiques :\n• Système de dénonciation communautaire\n• Modération intégrée\n• Interface utilisateur intuitive\n• Gestion des rapports\n• Communauté Minecraft francophone",
-      "image": "/img/projects/snitchmc.webp",
-      "link": "https://github.com/snitch-mc/Snitch",
-      "year": 2023
-    },
-    {
-      "id": 8,
-      "title": "The Fork",
-      "language": "Français",
-      "description": "Site vitrine pour un restaurant fictif. Design moderne et responsive avec présentation des menus, réservation en ligne et galerie.\n\nFonctionnalités :\n• Design responsive élégant\n• Présentation des menus\n• Système de réservation\n• Galerie de photos\n• Informations pratiques",
-      "image": "/img/projects/thefork.webp",
-      "link": "https://thboehi.github.io/The-Fork/",
-      "year": 2022
-    },
-    {
-      "id": 9,
-      "title": "La Morille Gourmande",
-      "language": "Français",
-      "description": "Site de vente de Morilles de hautes qualité, avec un design élégant et une interface utilisateur intuitive pour une expérience agréable. Design responsive et moderne, luxueux.",
-      "image": "/img/projects/morillegourmande.webp",
-      "link": "https://morille-gourmande.ch",
-      "year": 2026,
-      "pinned": true
     }
   ]
 }

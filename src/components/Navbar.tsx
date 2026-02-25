@@ -30,7 +30,7 @@ export const Navbar = ({ params }: { params: { locales: "fr" | "en" | "de" } }) 
     { href: "/", key: "home" },
     { href: "/prestations", key: "prestations" },
     { href: "/about", key: "about" },
-    { href: "/projects", key: "projects" },
+    // { href: "/projects", key: "projects" }, A REMETTRE QUAND IL Y AURA DES PROJETS A AFFICHER
     { href: "/contact", key: "contact" }
   ];
 

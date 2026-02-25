@@ -163,8 +163,8 @@ export default async function Home({
         </div>
       </section>
 
-      {/* Testimonials Section - Espacement modéré */}
-      <div className="py-10 md:py-16" />
+      {/* Testimonials Section - Espacement modéré - RETIRER LE COMMENTAIRE POUR REMETTRE LA SECTION DES AVIS, ATTENTION ELLE EST LEGEREMENT BUG MAIS RIEN DE GRAVE */}
+      {/* <div className="py-10 md:py-16" />
       <section className="w-full flex flex-col items-center justify-center py-16 md:py-20">
         <div className="max-w-7xl w-full px-4">
           <SectionTitle className="mb-12 md:mb-14">
@@ -179,7 +179,7 @@ export default async function Home({
             size="default"
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Tech Stack Section - Respiration légère */}
       <div className="py-8 md:py-12" />
@@ -195,13 +195,7 @@ export default async function Home({
           <SectionTitle className="mb-12 md:mb-14">
             {teamMini.title}
           </SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <TeamMemberMini
-              name={teamMini.thomas.name}
-              role={teamMini.thomas.role}
-              description={teamMini.thomas.description}
-              index={0}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <TeamMemberMini
               name={teamMini.eric.name}
               role={teamMini.eric.role}
