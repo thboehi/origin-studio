@@ -124,7 +124,7 @@ export default async function About({
           {about.team.description}
         </SectionSubtitle>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl w-full relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl w-full relative">
           <TeamCard
             title={about.team.commercial.title}
             name={about.team.commercial.name}
@@ -141,15 +141,6 @@ export default async function About({
             image="/img/team/blank.webp"
             phone="+41 79 941 89 68"
             mail="eric@origin-studio.ch"
-            protectionMessage={about.team.protectionMessage}
-          />
-          <TeamCard
-            title={about.team.frontend.title}
-            name={about.team.frontend.name}
-            description={about.team.frontend.description}
-            image="/img/team/thoma.webp"
-            phone="+41 79 648 19 98"
-            mail="thomas@origin-studio.ch"
             protectionMessage={about.team.protectionMessage}
           />
         </div>

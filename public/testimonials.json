@@ -16,22 +16,6 @@
   },
   "testimonials": [
     {
-      "id": "joel-d",
-      "name": "Joel D.",
-      "company": "",
-      "rating": 5,
-      "text": "Excellent travail, professionnel, efficace, créatif, nous recommandons à 200% ! Pour la création de notre site de mariage, ma fiancée et moi-même avons contacté un des développeur de Origin Studio, Thoma, qui nous a fait un travail d'orfèvre. Après un court appel avec Thoma pour définir nos envies, nous avions plus qu'à insérer nos données/envies très simplement sur une page de travail partagé avec lui (malin et simple) et le site a pu être créer très rapidement. Nos besoins ont été compris avec grande facilité. Le site a rapidement été créé. La communication était facile. Résultat: un site qui nous plaît et qui semble s'être mis en place, sans ressentir trop d'effort. Bravo et merci à l'équipe Origin Studio !",
-      "image": "joel_d.webp"
-    },
-    {
-      "id": "samuel-v",
-      "name": "Samuel V.",
-      "company": "Azaph et Christus Rex",
-      "rating": 5,
-      "text": "Service irréprochable. Nous avons été accompagné de À à Z sur le processus de création de notre site avec de nombreux conseils tout en respectant nos envies. Nous avons désormais un site internet qui correspond à l’image que nous souhaitions avoir. Mention spéciale à la qualité relationnelle qui nous a enchanté. Merci Origin Studio",
-      "image": "samuel_v.webp"
-    },
-    {
       "id": "mahine-c",
       "name": "Mahine C.",
       "company": "Bey'One",
